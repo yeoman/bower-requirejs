@@ -1,0 +1,49 @@
+{
+  "name": "grunt-bower-hooks",
+  "version": "0.1.0",
+  "description": "Automagically wire-up installed Bower components into your RequireJS config",
+  "keywords": [
+    "gruntplugin",
+    "bower",
+    "requirejs",
+    "rjs",
+    "config"
+  ],
+  "homepage": "https://github.com/yeoman/grunt-bower-hooks",
+  "bugs": "https://github.com/yeoman/grunt-bower-hooks/issues",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yeoman/grunt-bower-hooks.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "stringify-object": "~0.1.2",
+    "json5": "~0.1.0",
+    "lodash": "~1.0.0-rc.2",
+    "bower": "~0.6.7"
+  },
+  "devDependencies": {
+    "matchdep": "~0.1.1",
+    "grunt": "~0.4.0rc3",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-clean": "git://github.com/gruntjs/grunt-contrib-clean.git#da8316c1",
+    "grunt-contrib-copy": "~0.3.2",
+    "grunt-contrib-nodeunit": "0.1.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "BSD"
+    }
+  ]
+}
