@@ -13,12 +13,20 @@ module.exports = function (grunt) {
 
 		require('bower').commands.list({paths: true})
 			.on('data', function (data) {
+				var rjsConfig;
+
 				if (data) {
-					var rjsConfig = file.replace(reConfig, function (match, p1) {
+					// remove extension from JS files
+					data = _.forOwn(data, function (val, key, obj) {
+						obj[key] = grunt.file.isDir(val) ? val : val.replace(/\.js$/, '');
+					});
+
+					rjsConfig = file.replace(reConfig, function (match, p1) {
 						var config =JSON5.parse(p1);
 						_.extend(config.paths, data);
 						return 'require.config(' + stringifyObject(config, {indent: '    '});
 					});
+
 					grunt.file.write(filePath, rjsConfig);
 					grunt.log.writeln('Updated RequireJS config with installed Bower components'.green);
 					cb();

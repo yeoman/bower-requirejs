@@ -3,6 +3,6 @@ require.config({
     paths: {
         hm: 'vendor/hm',
         esprima: 'vendor/esprima',
-        jquery: 'components/jquery/jquery.js'
+        jquery: 'components/jquery/jquery'
     }
 });
