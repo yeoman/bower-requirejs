@@ -30,7 +30,8 @@ module.exports = function (grunt) {
 			tasks: ['test/*_test.js']
 		},
 		bower: {
-			rjsConfig: 'tmp/config.js'
+			rjsConfig: 'tmp/config.js',
+			indent: '  '
 		}
 	});
 
