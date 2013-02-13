@@ -41,6 +41,14 @@ Type: `String`
 Specify a relative path to your RequireJS config
 
 
+### indent
+
+**Optional**  
+Type: `String`
+
+Specify an indentation string to use when updating the paths property. Default is 4 spaces
+
+
 ## License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php) and copyright Google

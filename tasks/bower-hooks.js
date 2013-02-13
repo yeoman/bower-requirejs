@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 					rjsConfig = file.replace(reConfig, function (match, p1) {
 						var config =JSON5.parse(p1);
 						_.extend(config.paths, data);
-						return 'require.config(' + stringifyObject(config, {indent: '    '});
+						return 'require.config(' + stringifyObject(config, {indent: grunt.config('bower.indent') || '    '});
 					});
 
 					grunt.file.write(filePath, rjsConfig);
