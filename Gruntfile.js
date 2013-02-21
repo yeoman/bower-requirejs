@@ -22,7 +22,8 @@ module.exports = function (grunt) {
 		copy: {
 			test: {
 				files: {
-					'tmp/config.js': 'test/fixtures/config.js'
+					'tmp/config.js': 'test/fixtures/config.js',
+					'tmp/global-config.js': 'test/fixtures/global-config.js'
 				}
 			}
 		},
@@ -30,8 +31,12 @@ module.exports = function (grunt) {
 			tasks: ['test/*_test.js']
 		},
 		bower: {
-			rjsConfig: 'tmp/config.js',
-			indent: '  '
+			standard: {
+				rjsConfig: 'tmp/config.js'
+			},
+			global: {
+				rjsConfig: 'tmp/global-config.js'
+			}
 		}
 	});
 

@@ -1,4 +1,4 @@
-require.config({
+var require = {
   "shim": {
 
   },
@@ -7,4 +7,4 @@ require.config({
     "esprima": "vendor/esprima",
     "jquery": "components/jquery/jquery"
   }
-});
+};

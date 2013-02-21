@@ -16,6 +16,13 @@
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
   },
+  "contributors": [
+    {
+      "name": "Merrick Christensen",
+      "email": "merrick.christensen@gmail.com",
+      "url": "http://merrickchristensen.com"
+    }
+  ],
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
@@ -25,10 +32,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "stringify-object": "~0.1.2",
-    "json5": "~0.2.0",
     "lodash": "~1.0.0-rc.3",
-    "bower": "~0.7.0"
+    "bower": "~0.7.0",
+    "requirejs": "~2.1.4"
   },
   "devDependencies": {
     "matchdep": "~0.1.1",
