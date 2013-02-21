@@ -20,7 +20,9 @@ npm install grunt-bower-hooks --save-dev
 ```js
 grunt.initConfig({
 	bower: {
-		rjsConfig: 'app/config.js'
+		target: {
+			rjsConfig: 'app/config.js'
+		}
 	}
 });
 
@@ -39,6 +41,7 @@ When the `bower` task is run it merges the paths to installed Bower components i
 Type: `String`
 
 Specify a relative path to your RequireJS config
+
 
 ## License
 
