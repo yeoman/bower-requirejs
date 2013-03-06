@@ -32,17 +32,20 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "lodash": "~1.0.0-rc.3",
-    "bower": "~0.7.0",
-    "requirejs": "~2.1.4"
+    "lodash": "~1.0.0",
+    "bower": "~0.8.5",
+    "requirejs": "~2.1.5"
   },
   "devDependencies": {
     "matchdep": "~0.1.1",
     "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "0.1.1rc6",
-    "grunt-contrib-clean": "0.4.0rc6",
-    "grunt-contrib-copy": "0.4.0rc7",
-    "grunt-contrib-nodeunit": "0.1.2rc6"
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
   },
   "engines": {
     "node": ">=0.8.0"
