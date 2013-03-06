@@ -46,9 +46,8 @@ module.exports = function (grunt) {
 		require('fs').mkdirSync(dir);
 	});
 
-	grunt.registerTask('bower-install', function() {
-		require('bower').commands.install.line(['', '', 'install', 'jquery'])
-			.on('end', this.async());
+	grunt.registerTask('bower-install', function () {
+		require('bower').commands.install(['jquery']).on('end', this.async());
 	});
 
 	grunt.registerTask('test', [

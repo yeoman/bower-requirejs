@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function (grunt) {
-	var _ = require('lodash');
 	var requirejs = require('requirejs/bin/r.js');
+	var _ = grunt.util._;
 
 	grunt.registerMultiTask('bower', 'Wire-up Bower components in RJS config', function () {
 		var cb = this.async();

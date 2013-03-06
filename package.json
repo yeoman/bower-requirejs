@@ -32,7 +32,6 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "lodash": "~1.0.0",
     "bower": "~0.8.5",
     "requirejs": "~2.1.5"
   },
