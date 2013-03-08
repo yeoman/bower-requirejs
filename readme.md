@@ -43,6 +43,16 @@ Type: `String`
 Specify a relative path to your RequireJS config
 
 
+### Options
+
+#### exclude
+
+Default: `[]`  
+Type: `Array`
+
+Specify components to be excluded from being added to the RequireJS config.
+
+
 ## License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php) and copyright Google

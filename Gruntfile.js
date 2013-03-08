@@ -31,6 +31,9 @@ module.exports = function (grunt) {
 			tasks: ['test/*_test.js']
 		},
 		bower: {
+			options: {
+				exclude: ['underscore']
+			},
 			standard: {
 				rjsConfig: 'tmp/config.js'
 			},
@@ -47,7 +50,9 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('bower-install', function () {
-		require('bower').commands.install(['jquery']).on('end', this.async());
+		require('bower').commands
+			.install(['jquery', 'underscore'])
+			.on('end', this.async());
 	});
 
 	grunt.registerTask('test', [
