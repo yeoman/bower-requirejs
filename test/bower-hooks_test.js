@@ -1,7 +1,7 @@
 'use strict';
 var grunt = require('grunt');
 
-exports.bowerHooks = {
+exports.bowerRJS = {
 	wireupComponent: function (test) {
 		test.expect(1);
 

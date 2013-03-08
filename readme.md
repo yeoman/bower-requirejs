@@ -1,4 +1,4 @@
-# grunt-bower-hooks [![Build Status](https://secure.travis-ci.org/yeoman/grunt-bower-hooks.png?branch=master)](http://travis-ci.org/yeoman/grunt-bower-hooks)
+# grunt-bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/grunt-bower-requirejs.png?branch=master)](http://travis-ci.org/yeoman/grunt-bower-requirejs)
 
 Automagically wire-up installed Bower components into your RequireJS config
 
@@ -8,7 +8,7 @@ Automagically wire-up installed Bower components into your RequireJS config
 If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
 
 ```shell
-npm install grunt-bower-hooks --save-dev
+npm install grunt-bower-requirejs --save-dev
 ```
 
 [grunt]: http://gruntjs.com
