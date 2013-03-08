@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 				if (data) {
 					// remove extension from JS files and remove excludes
 					data = _.forOwn(data, function (val, key, obj) {
-						if (excludes.indexOf(key) !== -1) {
+						if (excludes.indexOf(key) !== -1 || key === 'requirejs') {
 							delete obj[key];
 							return;
 						}

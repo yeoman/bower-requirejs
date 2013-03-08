@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('bower-install', function () {
 		require('bower').commands
-			.install(['jquery', 'underscore'])
+			.install(['jquery', 'underscore', 'requirejs'])
 			.on('end', this.async());
 	});
 
