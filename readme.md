@@ -18,6 +18,8 @@ npm install grunt-bower-requirejs --save-dev
 ## Example usage
 
 ```js
+grunt.loadNpmTasks('grunt-bower-requirejs');
+
 grunt.initConfig({
 	bower: {
 		target: {
