@@ -2,7 +2,6 @@
 module.exports = function (grunt) {
 	var requirejs = require('requirejs/bin/r.js');
 	var path = require('path');
-
 	var _ = grunt.util._;
 
 	grunt.registerMultiTask('bower', 'Wire-up Bower components in RJS config', function () {
@@ -28,9 +27,9 @@ module.exports = function (grunt) {
 
 					requirejs.tools.useLib(function (require) {
 						rjsConfig = require('transform').modifyConfig(file, function (config) {
-							// if specified, make paths relative to baseUrl
+							// make paths relative to baseUrl if specified
 							if (config.baseUrl) {
-								_.forOwn(data, function(val, key, obj) {
+								_.forOwn(data, function (val, key, obj) {
 									obj[key] = path.relative(config.baseUrl, val);
 								});
 							}
