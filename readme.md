@@ -11,6 +11,12 @@ If you haven't used [grunt][] before, be sure to check out the [Getting Started]
 npm install grunt-bower-requirejs --save-dev
 ```
 
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
+grunt.loadNpmTasks('grunt-bower-requirejs');
+```
+
 [grunt]: http://gruntjs.com
 [Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
 
@@ -18,8 +24,6 @@ npm install grunt-bower-requirejs --save-dev
 ## Example usage
 
 ```js
-grunt.loadNpmTasks('grunt-bower-requirejs');
-
 grunt.initConfig({
 	bower: {
 		target: {
@@ -28,13 +32,15 @@ grunt.initConfig({
 	}
 });
 
+grunt.loadNpmTasks('grunt-bower-requirejs');
+
 grunt.registerTask('default', ['bower']);
 ```
 
 
 ## Documentation
 
-When the `bower` task is run it merges the paths to installed Bower components into the `paths` property of your RequireJS config.
+When the `bower` task is run it merges the paths of installed Bower components into the `paths` property of your RequireJS config.
 
 
 ### rjsConfig
@@ -42,7 +48,7 @@ When the `bower` task is run it merges the paths to installed Bower components i
 **Required**  
 Type: `String`
 
-Specify a relative path to your RequireJS config
+Specify a relative path to your RequireJS config.
 
 
 ### Options
