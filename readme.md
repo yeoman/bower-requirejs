@@ -42,6 +42,8 @@ grunt.registerTask('default', ['bower']);
 
 When the `bower` task is run it merges the paths of installed Bower components into the `paths` property of your RequireJS config.
 
+You trigger this task from another task in your Gruntfile or through the CLI: `grunt bower`
+
 
 ### rjsConfig
 
@@ -49,6 +51,8 @@ When the `bower` task is run it merges the paths of installed Bower components i
 Type: `String`
 
 Specify a relative path to your RequireJS config.
+
+Make sure to specify the `baseUrl` property in your RequireJS config if you want to use relative paths.
 
 
 ### Options
