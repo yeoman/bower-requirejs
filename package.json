@@ -32,7 +32,6 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "bower": "~0.8.5",
     "requirejs": "~2.1.5"
   },
   "devDependencies": {
@@ -44,7 +43,8 @@
     "grunt-contrib-nodeunit": "~0.1.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.0",
+    "bower": "~0.x"
   },
   "engines": {
     "node": ">=0.8.0"
