@@ -16,7 +16,8 @@ module.exports = function (grunt) {
 		clean: {
 			test: [
 				'tmp',
-				'components'
+				'components',
+				'bower_components'
 			]
 		},
 		copy: {
