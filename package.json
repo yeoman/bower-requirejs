@@ -1,6 +1,6 @@
 {
   "name": "grunt-bower-requirejs",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Automagically wire-up installed Bower components into your RequireJS config",
   "keywords": [
     "gruntplugin",
