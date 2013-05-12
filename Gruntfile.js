@@ -56,8 +56,14 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('bower-install', function () {
 		require('bower').commands
-			.install(['jquery', 'underscore', 'requirejs'])
-			.on('end', this.async());
+			.install([
+				'jquery',
+				'underscore',
+				'requirejs',
+				'anima',
+				'typeahead.js',
+				'highstock'
+			]).on('end', this.async());
 	});
 
 	grunt.registerTask('test', [
