@@ -65,6 +65,31 @@ Type: `Array`
 Specify components to be excluded from being added to the RequireJS config.
 
 
+## Things to remember
+
+You need to already have a config.js file at the location specified by `rjsConfig`. At a minimum, the file should look like this:
+
+``` js
+requirejs.config({
+	baseUrl: './',
+	paths: {}
+});
+```
+
+You still need to create a path for *your* js files. The grunt task will only create paths for third party libraries specified in `bower.json`.
+
+``` js
+requirejs.config({
+	baseUrl: './',
+	paths: {
+		myComponent: 'js/myComponent.js'
+	}
+});
+```
+
+The task does not overwrite the config file, it just adds additional paths to it. So paths you add will be preserved. Keep in mind that if you change or remove one of your bower dependencies after you've run the task, that path will still exist in the config file and you'll need to manually remove it.
+
+
 ## License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php) and copyright Google
