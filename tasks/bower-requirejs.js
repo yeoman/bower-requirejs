@@ -43,6 +43,15 @@ module.exports = function (grunt) {
 							delete obj[key];
 							grunt.log.writeln('Warning: Renaming ' + key + ' to ' + newKey);
 						}
+
+						// if there's no main attribute in the bower.json file look for
+						// a top level .js file.
+						// if we don't find one, or if we find too many, continue to use
+						// the original value.
+						if (!_.isArray(val) && grunt.file.isDir(val)) {
+							var main = grunt.file.expand({ cwd: val }, '*.js', '!*.min.js');
+							obj[key] = main.length === 1 ? path.join(val, main[0]) : val;
+						}
 					});
 
 					requirejs.tools.useLib(function (require) {

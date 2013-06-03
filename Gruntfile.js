@@ -60,6 +60,7 @@ module.exports = function (grunt) {
 				'jquery',
 				'underscore',
 				'requirejs',
+				'respond',
 				'anima',
 				'typeahead.js',
 				'highstock'
