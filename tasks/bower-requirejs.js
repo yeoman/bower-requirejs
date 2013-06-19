@@ -45,11 +45,16 @@ module.exports = function (grunt) {
 						}
 
 						// if there's no main attribute in the bower.json file look for
-						// a top level .js file.
-						// if we don't find one, or if we find too many, continue to use
-						// the original value.
+						// a top level .js file. if we don't find one, or if we find too many,
+						// continue to use the original value.
+						// if we find any Gruntfiles, remove them and log a warning.
 						if (!_.isArray(val) && grunt.file.isDir(val)) {
 							var main = grunt.file.expand({ cwd: val }, '*.js', '!*.min.js');
+							if (_.contains(main, 'grunt.js') || _.contains(main, 'Gruntfile.js')) {
+								grunt.log.writeln('Warning: Ignoring Gruntfile in ' + key);
+								grunt.log.writeln('You should inform the author to ignore this file in their bower.json');
+								main = _.without(main, 'grunt.js', 'Gruntfile.js');
+							}
 							obj[key] = main.length === 1 ? path.join(val, main[0]) : val;
 						}
 					});
