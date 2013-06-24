@@ -9,8 +9,8 @@
     "rjs",
     "config"
   ],
-  "homepage": "https://github.com/yeoman/grunt-bower-hooks",
-  "bugs": "https://github.com/yeoman/grunt-bower-hooks/issues",
+  "homepage": "https://github.com/yeoman/grunt-bower-requirejs",
+  "bugs": "https://github.com/yeoman/grunt-bower-requirejs/issues",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -26,7 +26,7 @@
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yeoman/grunt-bower-hooks.git"
+    "url": "git://github.com/yeoman/grunt-bower-requirejs.git"
   },
   "scripts": {
     "test": "grunt test"
