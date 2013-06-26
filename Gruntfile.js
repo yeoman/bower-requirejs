@@ -22,11 +22,10 @@ module.exports = function (grunt) {
 		},
 		copy: {
 			test: {
-				files: {
-					'tmp/config.js': 'test/fixtures/config.js',
-					'tmp/global-config.js': 'test/fixtures/global-config.js',
-					'tmp/baseurl-config.js': 'test/fixtures/baseurl-config.js'
-				}
+				expand: true,
+				cwd: 'test/fixtures',
+				src: ['*.js', '!*-expected.js'],
+				dest: 'tmp/'
 			}
 		},
 		nodeunit: {
@@ -42,8 +41,11 @@ module.exports = function (grunt) {
 			global: {
 				rjsConfig: 'tmp/global-config.js'
 			},
-			baseUrl: {
-				rjsConfig: 'tmp/baseurl-config.js'
+			baseurl: {
+				options: {
+					baseUrl: './'
+				},
+				rjsConfig: 'tmp/baseurl.js'
 			}
 		}
 	});

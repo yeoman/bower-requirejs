@@ -7,6 +7,8 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('bower', 'Wire-up Bower components in RJS config', function () {
 		var cb = this.async();
 		var excludes = this.options({exclude: []}).exclude;
+		var configDir = path.dirname(this.data.rjsConfig);
+		var baseUrl = this.options({ baseUrl: configDir }).baseUrl;
 		var filePath = this.data.rjsConfig;
 		var file = grunt.file.read(filePath);
 
@@ -87,20 +89,18 @@ module.exports = function (grunt) {
 
 								// if there were multiple js files create a path
 								// for each using its filename.
-								var jspath;
 								if (jsfiles.length > 1) {
 									// remove the original key to array relationship since we're
 									// splitting the component into multiple paths
 									delete obj[key];
 									_.forEach(jsfiles, function (jsfile) {
-										jspath = config.baseUrl ? path.relative(config.baseUrl, jsfile) : jsfile;
+										var jspath = path.relative(baseUrl, jsfile);
 										obj[path.basename(jspath).split('.')[0]] = jspath;
 									});
 								// if there was only one js file create a path
 								// using the key
 								} else {
-									jspath = config.baseUrl ? path.relative(config.baseUrl, jsfiles[0]) : jsfiles[0];
-									obj[key] = jspath;
+									obj[key] = path.relative(baseUrl, jsfiles[0]);
 								}
 							});
 

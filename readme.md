@@ -64,6 +64,13 @@ Type: `Array`
 
 Specify components to be excluded from being added to the RequireJS config.
 
+#### baseUrl
+
+Default: `null`  
+Type: `String`
+
+Generate paths relative to a specific directory. This option is for anyone **not** using `data-main` who wishes to set their own base.
+
 
 ## Things to remember
 
