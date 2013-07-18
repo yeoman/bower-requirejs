@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 			}
 		},
 		nodeunit: {
-			tasks: ['test/*_test.js']
+			tasks: ['test/test.js']
 		},
 		bower: {
 			options: {
