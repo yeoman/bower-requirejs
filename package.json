@@ -54,5 +54,6 @@
     {
       "type": "BSD"
     }
-  ]
+  ],
+  "files": ["tasks/bower-requirejs.js"]
 }
