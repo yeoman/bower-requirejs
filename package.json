@@ -32,7 +32,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "requirejs": "~2.1.5"
+    "requirejs": "~2.1.5",
+    "slash": "~0.1.0"
   },
   "devDependencies": {
     "matchdep": "~0.1.1",
@@ -55,5 +56,7 @@
       "type": "BSD"
     }
   ],
-  "files": ["tasks/bower-requirejs.js"]
+  "files": [
+    "tasks/bower-requirejs.js"
+  ]
 }

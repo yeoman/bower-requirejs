@@ -1,8 +1,13 @@
 'use strict';
 module.exports = function (grunt) {
-	var requirejs = require('requirejs/bin/r.js');
 	var path = require('path');
+	var requirejs = require('requirejs/bin/r.js');
+	var slash = require('slash');
 	var _ = grunt.util._;
+
+	function normalizePath(str) {
+		return process.platform === 'win32' ? slash(str) : str;
+	}
 
 	grunt.registerMultiTask('bower', 'Wire-up Bower components in RJS config', function () {
 		var cb = this.async();
@@ -95,12 +100,12 @@ module.exports = function (grunt) {
 									delete obj[key];
 									_.forEach(jsfiles, function (jsfile) {
 										var jspath = path.relative(baseUrl, jsfile);
-										obj[path.basename(jspath).split('.')[0]] = jspath;
+										obj[path.basename(jspath).split('.')[0]] = normalizePath(jspath);
 									});
 								// if there was only one js file create a path
 								// using the key
 								} else {
-									obj[key] = path.relative(baseUrl, jsfiles[0]);
+									obj[key] = normalizePath(path.relative(baseUrl, jsfiles[0]));
 								}
 							});
 
