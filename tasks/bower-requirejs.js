@@ -62,6 +62,9 @@ module.exports = function (grunt) {
 								grunt.log.writeln('You should inform the author to ignore this file in their bower.json');
 								main = _.without(main, 'grunt.js', 'Gruntfile.js');
 							}
+							if (_.contains(main, path.basename(val) + '.js')) {
+								main = [path.basename(val) + '.js'];
+							}
 							obj[key] = main.length === 1 ? path.join(val, main[0]) : val;
 						}
 					});

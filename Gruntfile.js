@@ -66,7 +66,8 @@ module.exports = function (grunt) {
 				'anima',
 				'typeahead.js',
 				'highstock',
-				'jquery-ui-touch-punch-amd#0.1.0'
+				'jquery-ui-touch-punch-amd#0.1.0',
+				'json2'
 			]).on('end', this.async());
 	});
 
