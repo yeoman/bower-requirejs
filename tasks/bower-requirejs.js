@@ -36,8 +36,18 @@ module.exports = function (grunt) {
 				if (data) {
 					// remove excludes and clean up key names
 					data = _.forOwn(data, function (val, key, obj) {
-						if (excludes.indexOf(key) !== -1 || key === 'requirejs') {
+						if (excludes.indexOf(key) !== -1) {
 							delete obj[key];
+							return;
+						}
+
+						// create a path for require.js
+						// http://requirejs.org/docs/optimization.html#onejs
+						if (key === 'requirejs') {
+							// require.js doesn't include a bower.json and its main file can't
+							// be inferred so we explicitly set it here
+							// https://github.com/jrburke/requirejs/issues/801
+							obj[key] = path.join(obj[key], 'require.js');
 							return;
 						}
 
@@ -48,7 +58,7 @@ module.exports = function (grunt) {
 							var newKey = key.replace(/\.js$/, '');
 							obj[newKey] = obj[key];
 							delete obj[key];
-							grunt.log.writeln('Warning: Renaming ' + key + ' to ' + newKey);
+							grunt.log.writeln('Warning: Renaming ' + key + ' to ' + newKey + '\n');
 						}
 
 						// if there's no main attribute in the bower.json file look for
@@ -59,7 +69,7 @@ module.exports = function (grunt) {
 							var main = grunt.file.expand({ cwd: val }, '*.js', '!*.min.js');
 							if (_.contains(main, 'grunt.js') || _.contains(main, 'Gruntfile.js')) {
 								grunt.log.writeln('Warning: Ignoring Gruntfile in ' + key);
-								grunt.log.writeln('You should inform the author to ignore this file in their bower.json');
+								grunt.log.writeln('You should inform the author to ignore this file in their bower.json\n');
 								main = _.without(main, 'grunt.js', 'Gruntfile.js');
 							}
 							if (_.contains(main, path.basename(val) + '.js')) {

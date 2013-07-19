@@ -74,6 +74,8 @@ Generate paths relative to a specific directory. This option is for anyone **not
 
 ## Things to remember
 
+### Config file
+
 You need to already have a config.js file at the location specified by `rjsConfig`. At a minimum, the file should look like this:
 
 ``` js
@@ -95,6 +97,10 @@ requirejs.config({
 ```
 
 The task does not overwrite the config file, it just adds additional paths to it. So paths you add will be preserved. Keep in mind that if you change or remove one of your bower dependencies after you've run the task, that path will still exist in the config file and you'll need to manually remove it.
+
+### RequireJS component
+
+Although RequireJS does not provide a `bower.json` file, a path to `require.js` will still be created in your `rjsConfig` file. The path's name will be `requirejs`. If you are optimizing your scripts with `r.js` you can use this path to make sure RequireJS is included in your bundle.
 
 
 ## License

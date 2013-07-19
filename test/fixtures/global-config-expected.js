@@ -9,6 +9,7 @@ var require = {
     jquery: '../bower_components/jquery/jquery',
     'jquery-ui-touch-punch-amd': '../bower_components/jquery-ui-touch-punch-amd/jquery.ui.touch-punch',
     json2: '../bower_components/json2/json2',
+    requirejs: '../bower_components/requirejs/require',
     respond: '../bower_components/respond/respond.src',
     typeahead: '../bower_components/typeahead.js/dist/typeahead',
     highcharts: '../bower_components/highstock/js/highcharts.src',
