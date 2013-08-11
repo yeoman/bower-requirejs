@@ -11,6 +11,15 @@ exports.bowerRJS = {
 
 		test.done();
 	},
+	wireupComponentPathless: function (test) {
+		test.expect(1);
+
+		var actual = grunt.file.read('tmp/pathless-config.js');
+		var expected = grunt.file.read('test/fixtures/pathless-config-expected.js');
+		test.equal(actual, expected, 'should wireup Bower components in RequireJS config without paths');
+
+		test.done();
+	},
 	wireupComponentGlobalConfig: function (test) {
 		test.expect(1);
 

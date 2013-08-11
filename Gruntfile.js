@@ -38,6 +38,9 @@ module.exports = function (grunt) {
 			standard: {
 				rjsConfig: 'tmp/config.js'
 			},
+			pathless: {
+				rjsConfig: 'tmp/pathless-config.js'
+			},
 			global: {
 				rjsConfig: 'tmp/global-config.js'
 			},

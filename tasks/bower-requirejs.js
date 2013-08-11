@@ -122,7 +122,15 @@ module.exports = function (grunt) {
 								}
 							});
 
-							_.extend(config.paths, data);
+							// If the original config defines paths, add the
+							// bower component paths to it; otherwise, add a
+							// paths map with the bower components.
+							if (config.paths) {
+								_.extend(config.paths, data);
+							} else {
+								config.paths = data;
+							}
+
 							return config;
 						});
 
