@@ -60,18 +60,22 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('bower-install', function () {
-		require('bower').commands
-			.install([
-				'jquery',
-				'underscore',
-				'requirejs',
-				'respond',
-				'anima',
-				'typeahead.js',
-				'highstock',
-				'jquery-ui-touch-punch-amd#0.1.0',
-				'json2'
-			]).on('end', this.async());
+		var done = this.async();
+		var spawn = require('child_process').spawn,
+		    ls    = spawn('bower', ['install']);
+
+		ls.stdout.on('data', function (data) {
+			grunt.log.write(data);
+		});
+
+		ls.stderr.on('data', function (data) {
+			grunt.log.write(data);
+		});
+
+		ls.on('close', function (code) {
+		  grunt.log.writeln('child process exited with code ' + code);
+		  done();
+		});
 	});
 
 	grunt.registerTask('test', [
