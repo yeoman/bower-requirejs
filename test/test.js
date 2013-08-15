@@ -1,13 +1,12 @@
 'use strict';
-var grunt = require('grunt'),
-		durableJsonLint = require('durable-json-lint');
+var grunt = require('grunt');
+var durableJsonLint = require('durable-json-lint');
 
 // extract the config object as a string from the actual and expected files.
 // then turn the string into json so we can deeply compare the objects.
 // we do this because bower does not always create the paths object's keys
 // in the same order. so a pure string to string comparison will break.
-
-var jsonify = function(str) {
+var jsonify = function (str) {
 	var dirtyJson = str.slice(str.indexOf('{'), str.lastIndexOf('}') + 1);
 	var cleanJson = durableJsonLint(dirtyJson).json;
 

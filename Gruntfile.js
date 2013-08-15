@@ -61,8 +61,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('bower-install', function () {
 		var done = this.async();
-		var spawn = require('child_process').spawn,
-		    ls    = spawn('bower', ['install']);
+		var spawn = require('child_process').spawn;
+		var ls = spawn('bower', ['install']);
 
 		ls.stdout.on('data', function (data) {
 			grunt.log.write(data);
