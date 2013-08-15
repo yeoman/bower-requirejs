@@ -23,7 +23,11 @@
     "url": "http://sindresorhus.com"
   },
   "maintainers": [
-    {}
+    {
+      "name": "Rob Dodson",
+      "email": "lets.email.rob@gmail.com",
+      "url": "http://robdodson.me"
+    }
   ],
   "contributors": [
     {
@@ -51,7 +55,8 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "bower": "~1.x"
+    "bower": "~1.x",
+    "durable-json-lint": "0.0.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.0",
