@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 		var filePath = this.data.rjsConfig;
 		var file = grunt.file.read(filePath);
 
-		require('bower').commands.list({paths: true})
+		require('bower').commands.list({paths: true, relative: false})
 			.on('end', function (data) {
 				var rjsConfig;
 				if (data) {
