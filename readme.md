@@ -5,7 +5,7 @@ Automagically wire-up installed Bower components into your RequireJS config
 
 ## Getting Started
 
-If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
+If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a Gruntfile as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
 
 ```shell
 npm install grunt-bower-requirejs --save-dev
@@ -18,7 +18,7 @@ grunt.loadNpmTasks('grunt-bower-requirejs');
 ```
 
 [grunt]: http://gruntjs.com
-[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
+[Getting Started]: http://gruntjs.com/getting-started
 
 
 ## Example usage
