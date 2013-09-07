@@ -25,11 +25,11 @@ grunt.loadNpmTasks('grunt-bower-requirejs');
 
 ```js
 grunt.initConfig({
-	bower: {
-		target: {
-			rjsConfig: 'app/config.js'
-		}
-	}
+  bower: {
+    target: {
+      rjsConfig: 'app/config.js'
+    }
+  }
 });
 
 grunt.loadNpmTasks('grunt-bower-requirejs');
@@ -80,8 +80,8 @@ You need to already have a config.js file at the location specified by `rjsConfi
 
 ``` js
 requirejs.config({
-	baseUrl: './',
-	paths: {}
+  baseUrl: './',
+  paths: {}
 });
 ```
 
@@ -89,10 +89,10 @@ You still need to create a path for *your* js files. The grunt task will only cr
 
 ``` js
 requirejs.config({
-	baseUrl: './',
-	paths: {
-		myComponent: 'js/myComponent.js'
-	}
+  baseUrl: './',
+  paths: {
+    myComponent: 'js/myComponent.js'
+  }
 });
 ```
 
