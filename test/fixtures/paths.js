@@ -5,6 +5,7 @@ module.exports = {
   jquery: base + '/jquery/jquery.js',
   handlebars: [base + '/handlebars/handlebars.js', base + '/handlebars/handlebars.runtime.js'],
   backbone: base + '/backbone',
+  'backbone-amd': base + '/backbone-amd',
   anima: [base + '/anima/anima.min.js', base + '/anima/anima.min.js.map'],
   requirejs: base + '/requirejs',
   mout: base + '/mout',

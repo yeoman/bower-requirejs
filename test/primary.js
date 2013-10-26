@@ -26,6 +26,12 @@ describe('primary', function () {
     actual.should.eql(expected);
   });
 
+  it('should return a js file that matches the primary js found in package.json', function () {
+    var actual = primary('backbone-amd', paths['backbone-amd']);
+    var expected = path.join(paths['backbone-amd'], 'backbone.js');
+    actual.should.eql(expected);
+  });
+
   it('should exclude Gruntfiles', function () {
     var actual = primary('jquery-ui-touch-punch-amd', paths['jquery-ui-touch-punch-amd']);
     var expected = path.join(paths['jquery-ui-touch-punch-amd'], 'jquery.ui.touch-punch.js');
