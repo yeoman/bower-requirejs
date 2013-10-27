@@ -3,7 +3,7 @@ require.config({
 
   },
   paths: {
-    anima: "../bower_components/anima/anima.min",
+    anima: "../bower_components/anima/anima",
     'backbone-amd': '../bower_components/backbone-amd/backbone',
     backbone: "../bower_components/backbone/backbone",
     "jquery-ui-touch-punch-amd": "../bower_components/jquery-ui-touch-punch-amd/jquery.ui.touch-punch",

@@ -3,7 +3,7 @@
 
 'use strict';
 var should = require('should');
-var parse = require('../lib/parse');
+var parse = require('../../lib/parse');
 var paths = require('./fixtures/paths');
 
 describe('parse', function () {

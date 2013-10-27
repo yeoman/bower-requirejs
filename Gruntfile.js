@@ -15,11 +15,8 @@ module.exports = function (grunt) {
       ]
     },
     clean: {
-      test: [
-        'tmp',
-        'components',
-        'bower_components'
-      ]
+      bower: 'bower_components',
+      tmp: 'tmp'
     },
     copy: {
       test: {
@@ -34,8 +31,11 @@ module.exports = function (grunt) {
         reporter: 'spec',
         timeout: '5000'
       },
+      bin: {
+        src: ['test/binary/*.js']
+      },
       unit: {
-        src: ['test/*.js']
+        src: ['test/unit/*.js']
       },
       acceptance: {
         src: ['test/acceptance/*.js']
@@ -91,7 +91,8 @@ module.exports = function (grunt) {
     'mkdir:tmp',
     'copy',
     'bower-install',
-    'simplemocha'
+    'simplemocha',
+    'clean'
   ]);
 
   grunt.registerTask('default', ['test']);

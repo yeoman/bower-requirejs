@@ -4,7 +4,7 @@
 'use strict';
 var path = require('path');
 var should = require('should');
-var primary = require('../lib/primary');
+var primary = require('../../lib/primary');
 var paths = require('./fixtures/paths');
 
 describe('primary', function () {

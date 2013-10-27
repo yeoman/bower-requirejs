@@ -1,82 +1,33 @@
-# grunt-bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/grunt-bower-requirejs.png?branch=master)](http://travis-ci.org/yeoman/grunt-bower-requirejs)
+# bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/bower-requirejs.png?branch=master)](http://travis-ci.org/yeoman/bower-requirejs)
 
 Automagically wire-up installed Bower components into your RequireJS config
 
 
-## Getting Started
+## Install
 
-If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a Gruntfile as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
-
-```shell
-npm install grunt-bower-requirejs --save-dev
-```
-
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```js
-grunt.loadNpmTasks('grunt-bower-requirejs');
-```
-
-[grunt]: http://gruntjs.com
-[Getting Started]: http://gruntjs.com/getting-started
-
+- Install with [npm](https://npmjs.org/package/grunt-bower-requirejs): `npm install --save bower-requirejs`
 
 ## Example usage
 
-```js
-grunt.initConfig({
-  bower: {
-    target: {
-      rjsConfig: 'app/config.js'
-    }
-  }
-});
-
-grunt.loadNpmTasks('grunt-bower-requirejs');
-
-grunt.registerTask('default', ['bower']);
+```
+./node_modules/.bin/bower-requirejs -c path/to/config -e underscore -e jquery
 ```
 
+## Options
 
-## Documentation
-
-When the `bower` task is run it merges the paths of installed Bower components into the `paths` property of your RequireJS config.
-
-You trigger this task from another task in your Gruntfile or through the CLI: `grunt bower`
-
-
-### rjsConfig
-
-**Required**  
-Type: `String`
-
-Specify a relative path to your RequireJS config.
-
-Make sure to specify the `baseUrl` property in your RequireJS config if you want to use relative paths.
-
-
-### Options
-
-#### exclude
-
-Default: `[]`  
-Type: `Array`
-
-Specify components to be excluded from being added to the RequireJS config.
-
-#### baseUrl
-
-Default: `null`  
-Type: `String`
-
-Generate paths relative to a specific directory. This option is for anyone **not** using `data-main` who wishes to set their own base.
-
+```
+-h, --help           # Print options and usage'
+-v, --version        # Print the version number'
+-c, --config         # Path to your requirejs config file'
+-e, --excludes       # Name of a dependency to be excluded from the process'
+-b, --baseurl        # Path which all dependencies will be relative to'
+```
 
 ## Things to remember
 
 ### Config file
 
-You need to already have a config.js file at the location specified by `rjsConfig`. At a minimum, the file should look like this:
+You need to already have a `config.js` file at the location specified by the `--config` option. At a minimum, the file should look like this:
 
 ``` js
 requirejs.config({
