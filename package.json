@@ -1,9 +1,8 @@
 {
-  "name": "grunt-bower-requirejs",
+  "name": "bower-requirejs",
   "version": "0.8.0",
   "description": "Automagically wire-up installed Bower components into your RequireJS config",
   "keywords": [
-    "gruntplugin",
     "bower",
     "requirejs",
     "rjs",
@@ -14,8 +13,8 @@
     "package",
     "module"
   ],
-  "homepage": "https://github.com/yeoman/grunt-bower-requirejs",
-  "bugs": "https://github.com/yeoman/grunt-bower-requirejs/issues",
+  "homepage": "https://github.com/yeoman/bower-requirejs",
+  "bugs": "https://github.com/yeoman/bower-requirejs/issues",
   "license": "BSD",
   "author": {
     "name": "Sindre Sorhus",
@@ -42,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/yeoman/grunt-bower-requirejs.git"
+    "url": "git://github.com/yeoman/bower-requirejs.git"
   },
   "scripts": {
     "test": "grunt test"
@@ -72,13 +71,13 @@
     "should": "~1.2.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0",
     "bower": "~1.x"
   },
   "engines": {
     "node": ">=0.8.0"
   },
   "files": [
-    "tasks/bower-requirejs.js"
+    "bin",
+    "lib"
   ]
 }
