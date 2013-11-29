@@ -13,13 +13,13 @@ var opts = nopt({
   help: Boolean,
   version: Boolean,
   config: path,
-  excludes: Array,
+  exclude: Array,
   baseurl: path
 }, {
   h: '--help',
   v: '--version',
   c: '--config',
-  e: '--excludes',
+  e: '--exclude',
   b: '--baseurl'
 });
 
@@ -37,7 +37,7 @@ function help () {
     '  -h, --help           # Print options and usage',
     '  -v, --version        # Print the version number',
     '  -c, --config         # Path to your requirejs config file',
-    '  -e, --excludes       # Name of a dependency to be excluded from the process',
+    '  -e, --exclude       # Name of a dependency to be excluded from the process',
     '  -b, --baseurl        # Path which all dependencies will be relative to',
     ''
   ];
