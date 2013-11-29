@@ -8,13 +8,12 @@
     "rjs",
     "config",
     "wire",
+    "inject",
     "install",
     "component",
     "package",
     "module"
   ],
-  "homepage": "https://github.com/yeoman/bower-requirejs",
-  "bugs": "https://github.com/yeoman/bower-requirejs/issues",
   "license": "BSD",
   "author": {
     "name": "Sindre Sorhus",
@@ -39,10 +38,7 @@
   "bin": {
     "bower-requirejs": "bin/bower-requirejs.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/yeoman/bower-requirejs.git"
-  },
+  "repository": "yeoman/bower-requirejs",
   "scripts": {
     "test": "grunt test"
   },
@@ -51,7 +47,7 @@
     "slash": "~0.1.0",
     "nopt": "~2.1.2",
     "lodash": "~1.3.1",
-    "chalk": "~0.2.1",
+    "chalk": "~0.3.0",
     "glob": "~3.2.6",
     "file-utils": "~0.1.2",
     "sudo-block": "~0.2.1",
