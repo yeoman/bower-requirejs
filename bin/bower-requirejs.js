@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-
 var nopt = require('nopt');
 var path = require('path');
 var chalk = require('chalk');
@@ -25,11 +24,11 @@ var opts = nopt({
 
 var args = opts.argv.remain;
 
-function init () {
+function init() {
   project(args, opts);
 }
 
-function help () {
+function help() {
   var out = [
     'Usage: bower-requirejs [options]',
     '',
@@ -37,7 +36,7 @@ function help () {
     '  -h, --help           # Print options and usage',
     '  -v, --version        # Print the version number',
     '  -c, --config         # Path to your requirejs config file',
-    '  -e, --exclude       # Name of a dependency to be excluded from the process',
+    '  -e, --exclude        # Name of a dependency to be excluded from the process',
     '  -b, --baseurl        # Path which all dependencies will be relative to',
     ''
   ];
@@ -47,7 +46,7 @@ function help () {
 
 function rootCheck() {
   var msg = [
-    chalk.red('Easy with the "sudo."'),
+    chalk.red('Easy with the `sudo` :)'),
     'Since bower-requirejs is a user command, there is no need to execute it with superuser',
     'permissions. If you\'re having permission errors when using bower-requirejs without sudo',
     'please spend a few minutes learning more about how your system should work',
@@ -57,7 +56,7 @@ function rootCheck() {
     'https://gist.github.com/isaacs/579814'
   ];
 
-  sudoBlock({ message: msg.join('\n') });
+  sudoBlock({message: msg.join('\n')});
 }
 
 function pre() {
@@ -69,14 +68,10 @@ function pre() {
     return console.log(help());
   }
 
-  if (!opts.config) {
-    return console.log('--config option is required');
-  }
-
   init();
 }
 
-if (!process.env.yeoman_test && opts['update-notifier'] !== false) {
+if (opts['update-notifier'] !== false) {
   var notifier = updateNotifier({
     packagePath: '../package.json'
   });
