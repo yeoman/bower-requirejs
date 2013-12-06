@@ -35,7 +35,7 @@ function help() {
     'General options:',
     '  -h, --help           # Print options and usage',
     '  -v, --version        # Print the version number',
-    '  -c, --config         # Path to your requirejs config file',
+    '  -c, --config         # Path to your RequireJS config file',
     '  -e, --exclude        # Name of a dependency to be excluded from the process',
     '  -b, --baseurl        # Path which all dependencies will be relative to',
     ''
