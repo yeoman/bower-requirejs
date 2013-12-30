@@ -13,13 +13,13 @@ var opts = nopt({
   version: Boolean,
   config: path,
   exclude: Array,
-  baseurl: path
+  baseUrl: path
 }, {
   h: '--help',
   v: '--version',
   c: '--config',
   e: '--exclude',
-  b: '--baseurl'
+  b: '--baseUrl'
 });
 
 var args = opts.argv.remain;
@@ -37,7 +37,7 @@ function help() {
     '  -v, --version        # Print the version number',
     '  -c, --config         # Path to your RequireJS config file',
     '  -e, --exclude        # Name of a dependency to be excluded from the process',
-    '  -b, --baseurl        # Path which all dependencies will be relative to',
+    '  -b, --baseUrl        # Path which all dependencies will be relative to',
     ''
   ];
 

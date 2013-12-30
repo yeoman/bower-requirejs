@@ -22,7 +22,7 @@
 -v, --version        # Print the version number'
 -c, --config         # Path to your RequireJS config file'
 -e, --excludes       # Name of a dependency to be excluded from the process'
--b, --baseurl        # Path which all dependencies will be relative to'
+-b, --baseUrl        # Path which all dependencies will be relative to'
 ```
 
 
