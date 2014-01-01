@@ -75,6 +75,7 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "templates"
   ]
 }
