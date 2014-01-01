@@ -19,7 +19,7 @@ module.exports = function (grunt) {
       tmp: 'tmp'
     },
     copy: {
-      test: {
+      acceptance: {
         expand: true,
         cwd: 'test/acceptance/fixtures',
         src: ['*.js', '!*-expected.js'],
@@ -86,12 +86,18 @@ module.exports = function (grunt) {
     });
   });
 
+  grunt.registerTask('reset-tmp', ['clean:tmp', 'mkdir:tmp']);
+
   grunt.registerTask('test', [
     'clean',
     'mkdir:tmp',
-    'copy',
     'bower-install',
-    'simplemocha',
+    'simplemocha:bin',
+    'reset-tmp',
+    'simplemocha:unit',
+    'reset-tmp',
+    'copy:acceptance',
+    'simplemocha:acceptance',
     'clean'
   ]);
 

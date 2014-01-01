@@ -21,7 +21,7 @@
 -h, --help           # Print options and usage'
 -v, --version        # Print the version number'
 -c, --config         # Path to your RequireJS config file'
--e, --excludes       # Name of a dependency to be excluded from the process'
+-e, --exclude        # Name of a dependency to be excluded from the process'
 -b, --baseUrl        # Path which all dependencies will be relative to'
 ```
 
@@ -30,11 +30,11 @@
 
 ### Config file
 
-You need to already have a `config.js` file at the location specified by the `--config` option. At a minimum, the file should look like this:
+If you do not already have a `config.js` file at the location specified by the `--config` option then one will be generated for you. A basic `config.js` file looks like this:
 
 ``` js
 requirejs.config({
-  baseUrl: './',
+  shim: {},
   paths: {}
 });
 ```
@@ -43,9 +43,9 @@ You still need to create a path for *your* js files. This tool will only create 
 
 ``` js
 requirejs.config({
-  baseUrl: './',
+  shim: {},
   paths: {
-    myComponent: 'js/myComponent.js'
+    myComponent: 'js/myComponent.js'  // make sure to add your components!
   }
 });
 ```
