@@ -16,6 +16,7 @@ require.config({
     konamicode: 'bower_components/konamicode.js/build/konamicode.min',
     typeahead: 'bower_components/typeahead.js/dist/typeahead',
     handlebars: 'bower_components/handlebars/handlebars',
+    mout: 'bower_components/mout/src',
     'handlebars.runtime': 'bower_components/handlebars/handlebars.runtime'
   }
 });

@@ -19,6 +19,12 @@ module.exports = function (grunt) {
       tmp: 'tmp'
     },
     copy: {
+      unit: {
+        expand: true,
+        cwd: 'test/unit/fixtures/bower_components',
+        src: ['**/*'],
+        dest: 'tmp/bower_components'
+      },
       acceptance: {
         expand: true,
         cwd: 'test/acceptance/fixtures',
@@ -28,7 +34,7 @@ module.exports = function (grunt) {
     },
     simplemocha: {
       options: {
-        reporter: 'spec',
+        reporter: 'dot',
         timeout: '5000'
       },
       bin: {
@@ -94,6 +100,7 @@ module.exports = function (grunt) {
     'bower-install',
     'simplemocha:bin',
     'reset-tmp',
+    'copy:unit',
     'simplemocha:unit',
     'reset-tmp',
     'copy:acceptance',

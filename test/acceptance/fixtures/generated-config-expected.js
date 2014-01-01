@@ -13,6 +13,7 @@ var require = {
     respond: '../bower_components/respond/respond.src',
     konamicode: '../bower_components/konamicode.js/build/konamicode.min',
     typeahead: '../bower_components/typeahead.js/dist/typeahead',
+    mout: '../bower_components/mout/src',
     handlebars: '../bower_components/handlebars/handlebars',
     'handlebars.runtime': '../bower_components/handlebars/handlebars.runtime'
   }
