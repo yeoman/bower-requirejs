@@ -22,10 +22,8 @@ var opts = nopt({
   b: '--baseUrl'
 });
 
-var args = opts.argv.remain;
-
 function init() {
-  project(args, opts);
+  project(opts);
 }
 
 function help() {

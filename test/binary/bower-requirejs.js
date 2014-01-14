@@ -20,7 +20,7 @@ describe('bin', function () {
 
       // Mock lib/index.js to verify the binary passes along the
       // correct arguments
-      mockery.registerMock('../lib', function (args, opts, cb) {
+      mockery.registerMock('../lib', function (opts, cb) {
         this.mockOpts = opts;
       }.bind(this));
     });
