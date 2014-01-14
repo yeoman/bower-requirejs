@@ -20,9 +20,8 @@ describe('index', function () {
 
   describe('config', function () {
     it('should return the expected result', function (done) {
-      var args = [];
       var opts = { config: 'tmp/config.js', exclude: ['underscore'] };
-      require('../../lib')(args, opts, function () {
+      require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/config-expected.js', 'utf8'));
         actual.should.eql(expected);
@@ -33,9 +32,8 @@ describe('index', function () {
 
   describe('global-config', function () {
     it('should return the expected result', function (done) {
-      var args = [];
       var opts = { config: 'tmp/global-config.js', exclude: ['underscore'] };
-      require('../../lib')(args, opts, function () {
+      require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/global-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/global-config-expected.js', 'utf8'));
         actual.should.eql(expected);
@@ -46,9 +44,8 @@ describe('index', function () {
 
   describe('baseurl', function () {
     it('should return the expected result', function (done) {
-      var args = [];
       var opts = { config: 'tmp/baseurl.js', exclude: ['underscore'], baseUrl: './' };
-      require('../../lib')(args, opts, function () {
+      require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/baseurl.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/baseurl-expected.js', 'utf8'));
         actual.should.eql(expected);
@@ -59,9 +56,8 @@ describe('index', function () {
 
   describe('pathless-config', function () {
     it('should return the expected result', function (done) {
-      var args = [];
       var opts = { config: 'tmp/pathless-config.js', exclude: ['underscore'] };
-      require('../../lib')(args, opts, function () {
+      require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/pathless-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/pathless-config-expected.js', 'utf8'));
         actual.should.eql(expected);
@@ -72,9 +68,8 @@ describe('index', function () {
 
   describe('generated-config', function () {
     it('should return the expected result', function (done) {
-      var args = [];
       var opts = { config: 'tmp/generated-config.js', exclude: ['underscore'] };
-      require('../../lib')(args, opts, function () {
+      require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/generated-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/generated-config-expected.js', 'utf8'));
         actual.should.eql(expected);

@@ -12,7 +12,7 @@ describe('index', function () {
   });
 
   it('should create a config file if one does not exist', function (done) {
-    require('../../lib')({}, { config: 'tmp/generated-config.js' }, function () {
+    require('../../lib')({ config: 'tmp/generated-config.js' }, function () {
       file.exists(path.join(__dirname, '../../tmp/generated-config.js')).should.be.ok;
       done();
     });
