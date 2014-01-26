@@ -1,6 +1,6 @@
 {
   "name": "bower-requirejs",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Automagically wire-up installed Bower components into your RequireJS config",
   "keywords": [
     "bower",
