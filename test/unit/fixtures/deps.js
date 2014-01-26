@@ -41,5 +41,30 @@ module.exports = {
     pkgMeta: {
       main: 'src/'
     }
+  },
+  'non-js': {
+    canonicalDir: './tmp/bower_components/non-js',
+    pkgMeta: {
+      main: 'not/js/foo.css'
+    }
+  },
+  'non-jss': {
+    canonicalDir: './tmp/bower_components/non-jss',
+    pkgMeta: {
+      main: [
+        'not/js/foo.css',
+        'not/js/also/bar.css'
+      ]
+    }
+  },
+  'some-js': {
+    canonicalDir: './tmp/bower_components/some-js',
+    pkgMeta: {
+      main: [
+        'not/js/foo.css',
+        'not/js/also/bar.css',
+        'is/js/baz.js'
+      ]
+    }
   }
 };

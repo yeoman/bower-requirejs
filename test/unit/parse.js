@@ -30,6 +30,24 @@ describe('parse', function () {
     actual.should.eql(expected);
   });
 
+  it('should ignore single non-JavaScript file in main', function () {
+    var actual = parse(deps['non-js'], 'non-js', './');
+    var expected = { paths: {} };
+    actual.should.eql(expected);
+  });
+
+  it('should ignore multiple non-JavaScript files in main', function () {
+    var actual = parse(deps['non-jss'], 'non-jss', './');
+    var expected = { paths: {} };
+    actual.should.eql(expected);
+  });
+
+  it('should ignore some non-JavaScript files in main', function () {
+    var actual = parse(deps['some-js'], 'some-js', './');
+    var expected = { paths: { 'some-js': 'tmp/bower_components/some-js/is/js/baz' } };
+    actual.should.eql(expected);
+  });
+
   it('should return a directory path if one is listed in main', function () {
     var actual = parse(deps.mout, 'mout', './');
     var expected = { paths: { mout: 'tmp/bower_components/mout/src' }};
