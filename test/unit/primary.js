@@ -36,4 +36,16 @@ describe('primary', function () {
     var expected = 'jquery.ui.touch-punch.js';
     actual.should.eql(expected);
   });
+
+  it('should return a js file in dist dir that matches the project dir', function () {
+    var actual = primary('uses-dist', deps['uses-dist']);
+    var expected = 'dist/uses-dist.js';
+    actual.should.eql(expected);
+  });
+
+  it('should return a js file in a custom seach dir that matches the project dir', function () {
+    var actual = primary('uses-custom-dir', deps['uses-custom-dir'], {extraSearchDirs: ['custom']});
+    var expected = 'custom/uses-custom-dir.js';
+    actual.should.eql(expected);
+  });
 });

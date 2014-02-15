@@ -66,5 +66,15 @@ module.exports = {
         'is/js/baz.js'
       ]
     }
+  },
+
+  // Dependencies that use extra search directories.
+  'uses-dist': {
+    canonicalDir: './tmp/bower_components/uses-dist',
+    pkgMeta: {}
+  },
+  'uses-custom-dir': {
+    canonicalDir: './tmp/bower_components/uses-custom-dir',
+    pkgMeta: {}
   }
 };

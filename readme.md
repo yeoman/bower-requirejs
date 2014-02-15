@@ -115,12 +115,13 @@ bower.commands.list()
   });
 ```
 
-### primary(name, canonicalDir)
+### primary(name, canonicalDir, opts)
 
 - `name` — The package name
 - `canonicalDir` — The canonicalDir for the package, either returned by `bower list` or passed in manually
+- `opts` — Use the ```opts.extraSearchDirs``` to specify other dirs to search, relative to the canonicalDir. By default this is ```['dist']```.
 
-If you just want to look for the top-level js file in a bower component you can use the `primary` module. The `primary` module will exclude gruntfiles and `min.js` files. It will also check if `package.json` specifies a `main` js file.
+If you just want to look for the js file in a bower component's top-level directory or 'dist' directory you can use the `primary` module. The `primary` module will exclude gruntfiles and `min.js` files. It will also check if `package.json` specifies a `main` js file.
 
 ```js
 var primary = require('bower-requirejs/lib/primary');
