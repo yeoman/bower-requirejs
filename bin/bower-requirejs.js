@@ -13,14 +13,19 @@ var opts = nopt({
   version: Boolean,
   config: path,
   exclude: Array,
-  baseUrl: path
+  'base-url': path,
+  baseUrl: path // alias for --base-url
 }, {
   h: '--help',
   v: '--version',
   c: '--config',
   e: '--exclude',
-  b: '--baseUrl'
+  b: '--base-url'
 });
+
+if (opts['base-url']) {
+  opts.baseUrl = opts['base-url'];
+}
 
 function init() {
   project(opts);
@@ -35,7 +40,7 @@ function help() {
     '  -v, --version        # Print the version number',
     '  -c, --config         # Path to your RequireJS config file',
     '  -e, --exclude        # Name of a dependency to be excluded from the process',
-    '  -b, --baseUrl        # Path which all dependencies will be relative to',
+    '  -b, --base-url        # Path which all dependencies will be relative to',
     ''
   ];
 
