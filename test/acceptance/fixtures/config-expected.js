@@ -17,6 +17,7 @@ require.config({
     typeahead: '../bower_components/typeahead.js/dist/typeahead',
     handlebars: '../bower_components/handlebars/handlebars',
     mout: '../bower_components/mout/src',
-    'handlebars.runtime': '../bower_components/handlebars/handlebars.runtime'
+    'handlebars.runtime': '../bower_components/handlebars/handlebars.runtime',
+    'backbone.marionette': '../bower_components/backbone.marionette/lib/core/amd/backbone.marionette'
   }
 });

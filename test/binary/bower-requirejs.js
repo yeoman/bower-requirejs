@@ -37,12 +37,14 @@ describe('bin', function () {
         path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
         '-c', 'foo',
         '-b', 'bar',
-        '-e', 'baz'
+        '-e', 'baz',
+        '-t',
       ];
       require('../../bin/bower-requirejs');
       this.mockOpts.config.should.eql(path.join(process.cwd(), 'foo'));
       this.mockOpts.baseUrl.should.eql(path.join(process.cwd(), 'bar'));
       this.mockOpts.exclude.should.eql(['baz']);
+      this.mockOpts.transitive.should.eql(true);
     });
 
     it('should alias base-url', function () {
@@ -72,6 +74,7 @@ describe('bin', function () {
       this.mockOpts.baseUrl.should.eql(path.join(process.cwd(), 'bar'));
       this.mockOpts.exclude.should.eql(['baz']);
     });
+
   });
 
   it('should return the version', function (done) {

@@ -14,9 +14,11 @@
     "backbone": "~1.0.0",
     "backbone-amd": "~1.0.0",
     "konamicode.js": "*",
-    "mout": "~0.7.1"
+    "mout": "~0.7.1",
+    "backbone.marionette": "~1.6.2"
   },
   "resolutions": {
-    "jquery": "~1.10.0"
+    "jquery": "~1.10.0",
+    "backbone": "~1.1.0"
   }
 }

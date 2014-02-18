@@ -14,13 +14,15 @@ var opts = nopt({
   config: path,
   exclude: Array,
   'base-url': path,
-  baseUrl: path // alias for --base-url
+  baseUrl: path, // alias for --base-url
+  transitive: Boolean,
 }, {
   h: '--help',
   v: '--version',
   c: '--config',
   e: '--exclude',
-  b: '--base-url'
+  b: '--base-url',
+  t: '--transitive'
 });
 
 if (opts['base-url']) {
@@ -41,6 +43,7 @@ function help() {
     '  -c, --config         # Path to your RequireJS config file',
     '  -e, --exclude        # Name of a dependency to be excluded from the process',
     '  -b, --base-url        # Path which all dependencies will be relative to',
+    '  -t, --transitive     # Process transitive dependencies',
     ''
   ];
 

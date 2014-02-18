@@ -4,6 +4,9 @@
 var fs = require('fs');
 var should = require('should');
 var durableJsonLint = require('durable-json-lint');
+var bower = require('bower');
+var path = require('path');
+var os = require('os');
 
 // extract the config object as a string from the actual and expected files.
 // then turn the string into json so we can deeply compare the objects.
@@ -72,6 +75,18 @@ describe('index', function () {
       require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/generated-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/generated-config-expected.js', 'utf8'));
+        actual.should.eql(expected);
+        done();
+      });
+    });
+  });
+
+  describe('with transitive dependencies', function(){
+    it('should return the expected result', function(done){
+      var opts = {transitive: true, config: 'tmp/transitive-config.js'};
+      require('../../lib')(opts, function () {
+        var actual = jsonify(fs.readFileSync('tmp/transitive-config.js', 'utf8'));
+        var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/transitive-config-expected.js', 'utf8'));
         actual.should.eql(expected);
         done();
       });
