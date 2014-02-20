@@ -81,9 +81,9 @@ describe('index', function () {
     });
   });
 
-  describe('with transitive dependencies', function(){
-    it('should return the expected result', function(done){
-      var opts = {transitive: true, config: 'tmp/transitive-config.js'};
+  describe('with transitive dependencies', function () {
+    it('should return the expected result', function (done) {
+      var opts = { transitive: true, config: 'tmp/transitive-config.js' };
       require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/transitive-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/transitive-config-expected.js', 'utf8'));

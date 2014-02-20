@@ -19,6 +19,6 @@ var require = {
     'backbone-amd': '../bower_components/backbone-amd/backbone',
     underscore: '../bower_components/underscore/underscore',
     backbone: '../bower_components/backbone/backbone',
-    anima: '../bower_components/anima/anima' 
+    anima: '../bower_components/anima/anima'
   }
 };
