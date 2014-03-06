@@ -4,9 +4,6 @@
 var fs = require('fs');
 var should = require('should');
 var durableJsonLint = require('durable-json-lint');
-var bower = require('bower');
-var path = require('path');
-var os = require('os');
 
 // extract the config object as a string from the actual and expected files.
 // then turn the string into json so we can deeply compare the objects.

@@ -16,5 +16,6 @@
   "unused": true,
   "strict": true,
   "trailing": true,
-  "smarttabs": true
+  "smarttabs": true,
+  "white": true
 }

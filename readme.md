@@ -22,7 +22,7 @@
 -v, --version        # Print the version number'
 -c, --config         # Path to your RequireJS config file'
 -e, --exclude        # Name of a dependency to be excluded from the process'
--b, --baseUrl        # Path which all dependencies will be relative to'
+-b, --base-url       # Path which all dependencies will be relative to'
 -t, --transitive     # Process transitive dependencies'
 ```
 
@@ -70,8 +70,8 @@ Although RequireJS does not provide a `bower.json` file, a path to `require.js` 
 
 ### bowerRequireJS(options, callback)
 
-- `options` — An [options object](https://github.com/yeoman/bower-requirejs#options) containing a config and optional baseUrl and excludes.
-- `callback` — A callback to execute when the task is finished
+- `options` — An [options object](https://github.com/yeoman/bower-requirejs#options) containing optional config, baseUrl, and exclude options. The `config` option specifies an output file to which the generated require.js config will be written. If a require.js config file already exists at this location, the generated config will be merged into this file.
+- `callback` — A callback to execute when the task is finished. This callback will receive an object that the contains require.js configuration generated from bower components. Note that this includes *only* config elements representing bower components.
 
 You can use `bower-requirejs` directly in your app if you prefer to not rely on the binary.
 
@@ -84,7 +84,7 @@ var options = {
   transitive: true
 };
 
-bowerRequireJS(options, function () {
+bowerRequireJS(options, function (rjsConfigFromBower) {
   // all done!
 });
 ```
@@ -131,6 +131,26 @@ var dep = { canonicalDir: './bower_components/backbone' };
 
 var primaryJS = primary(name, dep);
 // returns backbone.js
+```
+
+### buildConfig(bowerDependencyGraph, options)
+
+- `bowerDependencyGraph` — A bower dependency graph, as returned by a call to `bower.commands.list`
+- `options` — An object containing `baseUrl`, `exclude`, and `transitive` options, as described above.
+
+This module can be used to generate a requireJs config elements from bower components.
+
+```js
+var buildConfig = require('bower-requirejs/lib/build-config');
+
+bower.commands.list({})
+.on('end', function (dependencyGraph) {
+  var configElementsFromBower = buildConfig(dependencyGraph, {
+    baseUrl : '/some/base/url',
+    exclude: ['underscore', 'jquery'],
+    transitive: true
+  });
+});
 ```
 
 ## Credit
