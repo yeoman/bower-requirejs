@@ -89,4 +89,19 @@ describe('index', function () {
       });
     });
   });
+
+  describe('when dependency is missing', function () {
+    it('should callback with false', function (done) {
+      var opts = { config: 'tmp/config.js' };
+      fs.renameSync('bower_components/jquery', 'bower_components/foo');
+      require('../../lib')(opts, function (completed) {
+        console.log('Testing for missing jquery...');
+        var actual = completed;
+        var expected = false;
+        actual.should.eql(expected);
+        fs.renameSync('bower_components/foo', 'bower_components/jquery');
+        done();
+      });
+    });
+  });
 });
