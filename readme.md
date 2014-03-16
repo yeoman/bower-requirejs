@@ -11,7 +11,7 @@
 ## Example usage
 
 ```
-./node_modules/.bin/bower-requirejs -c path/to/config -e underscore -e jquery
+./node_modules/.bin/bower-requirejs -c path/to/config.js -e underscore -e jquery
 ```
 
 
@@ -26,6 +26,17 @@
 -t, --transitive     # Process transitive dependencies'
 ```
 
+## Using Bower Hooks
+
+Bower >=v1.3.1 includes [hooks](https://github.com/bower/bower/blob/master/HOOKS.md) for `preinstall`, `postinstall` and `preuninstall` actions. To run grunt-bower-requirejs after every bower install, add a `scripts` block to your `.bowerrc`.
+
+```
+{
+  "scripts": {
+    "postinstall": "bower-requirejs -c path/to/config.js"
+  }
+}
+```
 
 ## Things to remember
 
