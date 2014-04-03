@@ -1,4 +1,4 @@
-# bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/bower-requirejs.png?branch=master)](http://travis-ci.org/yeoman/bower-requirejs)
+# bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/bower-requirejs.svg?branch=master)](http://travis-ci.org/yeoman/bower-requirejs)
 
 > Automagically wire-up installed Bower components into your RequireJS config
 
