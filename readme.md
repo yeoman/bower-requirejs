@@ -5,10 +5,12 @@
 
 ## Install
 
-- Install with [npm](https://npmjs.org/package/grunt-bower-requirejs): `npm install --save bower-requirejs`
+```sh
+$ npm install --save bower-requirejs
+```
 
 
-## Example usage
+## Usage
 
 ```
 ./node_modules/.bin/bower-requirejs -c path/to/config.js -e underscore -e jquery
@@ -26,6 +28,7 @@
 -t, --transitive     # Process transitive dependencies'
 ```
 
+
 ## Using Bower Hooks
 
 Bower >=v1.3.1 includes [hooks](https://github.com/bower/bower/blob/master/HOOKS.md) for `preinstall`, `postinstall` and `preuninstall` actions. To run grunt-bower-requirejs after every bower install, add a `scripts` block to your `.bowerrc`.
@@ -37,6 +40,7 @@ Bower >=v1.3.1 includes [hooks](https://github.com/bower/bower/blob/master/HOOKS
   }
 }
 ```
+
 
 ## Things to remember
 
@@ -64,7 +68,9 @@ requirejs.config({
 
 The tool does not overwrite the config file, it just adds additional paths to it. So paths you add will be preserved. Keep in mind that if you change or remove one of your Bower dependencies after you've run the task, that path will still exist in the config file and you'll need to manually remove it.
 
+
 ### Transitive option
+
 If the transitive option is set to ```true```, then transitive dependencies will be also added to the require config.
 
 For example, say we explicitly have an entry in our bower config for module ```myTotallyCoolModule```, which depends on ```jQuery``` and ```underscore```. If the transitive option is set to ```true```, there will be config entries for ```myTotallyCoolModule```, ```jQuery```, and ```underscore```. Otherwise, if the transitive option is set to ```false```, there will only be a config entry for ```myTotallyCoolModule```.
