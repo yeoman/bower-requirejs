@@ -43,30 +43,30 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "chalk": "~0.4.0",
+    "file-utils": "~0.2.0",
+    "glob": "~3.2.6",
+    "lodash": "~2.4.1",
+    "nopt": "~2.1.2",
+    "object-assign": "~0.1.1",
     "requirejs": "~2.1.5",
     "slash": "~0.1.0",
-    "nopt": "~2.1.2",
-    "lodash": "~2.4.1",
-    "chalk": "~0.4.0",
-    "glob": "~3.2.6",
-    "file-utils": "~0.2.0",
     "sudo-block": "~0.3.0",
-    "update-notifier": "~0.1.7",
-    "object-assign": "~0.1.1"
+    "update-notifier": "~0.1.7"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-nodeunit": "~0.3.0",
-    "grunt-simple-mocha": "~0.4.0",
     "bower": "~1.x",
     "durable-json-lint": "0.0.1",
-    "mocha": "*",
-    "should": "~3.1.2",
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~0.3.0",
-    "mockery": "~1.4.0"
+    "mocha": "*",
+    "mockery": "~1.4.0",
+    "should": "~3.1.2"
   },
   "peerDependencies": {
     "bower": "~1.x"
