@@ -47,11 +47,11 @@
     "file-utils": "~0.2.0",
     "glob": "~3.2.6",
     "lodash": "~2.4.1",
-    "nopt": "~2.1.2",
-    "object-assign": "~0.1.1",
+    "nopt": "^2.2.1",
+    "object-assign": "^0.3.1",
     "requirejs": "~2.1.5",
     "slash": "~0.1.0",
-    "sudo-block": "~0.3.0",
+    "sudo-block": "^0.4.0",
     "update-notifier": "~0.1.7"
   },
   "devDependencies": {
@@ -60,13 +60,13 @@
     "grunt": "~0.4.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.3.0",
     "grunt-simple-mocha": "~0.4.0",
-    "load-grunt-tasks": "~0.3.0",
+    "load-grunt-tasks": "^0.4.0",
     "mocha": "*",
     "mockery": "~1.4.0",
-    "should": "~3.1.2"
+    "should": "^3.3.1"
   },
   "peerDependencies": {
     "bower": "~1.x"
