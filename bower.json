@@ -1,5 +1,5 @@
 {
-  "name": "grunt-bower-requirejs",
+  "name": "bower-requirejs",
   "private": true,
   "dependencies": {
     "jquery": "~1.10.0",
