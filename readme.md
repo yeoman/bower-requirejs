@@ -82,13 +82,75 @@ Each transitive dependency is only included once, even if the dependency is used
 
 Although RequireJS does not provide a `bower.json` file, a path to `require.js` will still be created in your `rjsConfig` file. The path's name will be `requirejs`. If you are optimizing your scripts with `r.js` you can use this path to make sure RequireJS is included in your bundle.
 
+## Package Support
+
+If a dependency's `moduleType` is set to `node` in `bower.json` it will be treated as a [CommonJS Package](http://requirejs.org/docs/api.html#packages).
+
+The following `bower.json` file:
+
+``` js
+{
+  "name": "node-module-type-stub",
+  "version": "0.0.1",
+  "moduleType": ["node"],
+  "main": "myMain.js"
+}
+```
+
+Will generate this entry in your `config.js` file:
+
+```
+require.config({
+  shim: {},
+  packages: [
+    {
+      name: 'node-module-type-stub',
+      main: 'myMain.js',
+      location: 'bower_components/node-module-type-stub'
+    }
+  ],
+  paths: {}
+});
+```
+
+### Configuring location
+
+By default, the task will set the package `location` to the root directory of the dependency. If the dependency includes a `location` property in its `bower.json`, then the location will be a combination of the root directory and the location dir.
+
+For example, a bower.json like this:
+
+``` js
+{
+  "name": "node-module-type-stub",
+  "version": "0.0.1",
+  "moduleType": ["node"],
+  "main": "myMain.js",
+  "location": "src"
+}
+```
+
+Will generate this entry in your `config.js` file:
+
+``` js
+require.config({
+  shim: {},
+  packages: [
+    {
+      name: 'node-module-type-stub',
+      main: 'myMain.js',
+      location: 'bower_components/node-module-type-stub/src'
+    }
+  ],
+  paths: {}
+});
+```
 
 ## Programmatic API
 
 ### bowerRequireJS(options, callback)
 
 - `options` — An [options object](https://github.com/yeoman/bower-requirejs#options) containing optional config, baseUrl, and exclude options. The `config` option specifies an output file to which the generated require.js config will be written. If a require.js config file already exists at this location, the generated config will be merged into this file.
-- `callback` — A callback to execute when the task is finished. This callback will receive an object that the contains require.js configuration generated from bower components. Note that this includes *only* config elements representing bower components.
+- `callback` — A callback to execute when the task is finished. This callback will receive an object that contains the require.js configuration generated from bower components. Note that this includes *only* config elements representing bower components.
 
 You can use `bower-requirejs` directly in your app if you prefer to not rely on the binary.
 
