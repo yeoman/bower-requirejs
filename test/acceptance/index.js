@@ -5,6 +5,7 @@ var fs = require('fs');
 var should = require('should');
 var durableJsonLint = require('durable-json-lint');
 
+
 // extract the config object as a string from the actual and expected files.
 // then turn the string into json so we can deeply compare the objects.
 // we do this because bower does not always create the paths object's keys

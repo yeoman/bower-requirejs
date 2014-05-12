@@ -2,6 +2,13 @@ require.config({
   shim: {
 
   },
+  packages: [
+    {
+      name: 'node-module-type-stub',
+      main: 'myMain.js',
+      location: '../bower_components/node-module-type-stub/src'
+    }
+  ],
   paths: {
     hm: 'vendor/hm',
     esprima: 'vendor/esprima',

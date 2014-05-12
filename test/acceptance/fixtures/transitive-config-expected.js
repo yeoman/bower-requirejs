@@ -2,6 +2,13 @@ var require = {
   shim: {
 
   },
+  packages: [
+    {
+      name: 'node-module-type-stub',
+      main: 'myMain.js',
+      location: '../bower_components/node-module-type-stub/src'
+    }
+  ],
   paths: {
     typeahead: '../bower_components/typeahead.js/dist/typeahead',
     respond: '../bower_components/respond/respond.src',

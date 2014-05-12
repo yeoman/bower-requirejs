@@ -15,7 +15,8 @@
     "backbone-amd": "~1.0.0",
     "konamicode.js": "*",
     "mout": "~0.7.1",
-    "backbone.marionette": "~1.6.2"
+    "backbone.marionette": "~1.6.2",
+    "node-module-type-stub": "*"
   },
   "resolutions": {
     "jquery": "~1.10.0"
