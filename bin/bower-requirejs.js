@@ -78,13 +78,10 @@ function pre() {
 }
 
 if (opts['update-notifier'] !== false) {
-  var notifier = updateNotifier({
-    packagePath: '../package.json'
-  });
-
-  if (notifier.update) {
-    notifier.notify(true);
-  }
+  updateNotifier({
+    packageName: pkg.name,
+    packageVersion: pkg.version
+  }).notify();
 }
 
 rootCheck();
