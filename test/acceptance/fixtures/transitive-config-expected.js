@@ -20,12 +20,12 @@ var require = {
     handlebars: '../bower_components/handlebars/handlebars',
     'handlebars.runtime': '../bower_components/handlebars/handlebars.runtime',
     underscore: '../bower_components/underscore/underscore',
-    jquery: '../bower_components/jquery/jquery',
+    jquery: '../bower_components/jquery/jquery.min',
     'backbone.wreqr': '../bower_components/backbone.wreqr/lib/amd/backbone.wreqr',
     'backbone.babysitter': '../bower_components/backbone.babysitter/lib/backbone.babysitter',
     'backbone.marionette': '../bower_components/backbone.marionette/lib/core/amd/backbone.marionette',
     'backbone-amd': '../bower_components/backbone-amd/backbone',
     backbone: '../bower_components/backbone/backbone',
-    anima: '../bower_components/anima/anima'
+    anima: '../bower_components/anima/anima.min'
   }
 };
