@@ -20,5 +20,16 @@
   },
   "resolutions": {
     "jquery": "~1.10.0"
+  },
+  "overrides": {
+    "jquery": {
+      "main": "jquery.min.js"
+    },
+    "anima": {
+      "main": "anima.min.js"
+    },
+    "backbone": {
+      "main": "  "
+    }
   }
 }
