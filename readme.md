@@ -145,6 +145,26 @@ require.config({
 });
 ```
 
+### Overriding the main file of a dependency
+
+You can override the main file of a given dependency by specifying the `overrides.{dependency}.main` property
+in your `bower.json` file:
+
+```js
+{  
+  "overrides": {
+     "jquery": {
+       "main": "jquery.min.js"
+     },
+     "anima": {
+       "main": "anima.min.js"
+     }
+   }
+ }
+```
+
+> The file path is relative to the dependency folder
+
 ## Programmatic API
 
 ### bowerRequireJS(options, callback)
