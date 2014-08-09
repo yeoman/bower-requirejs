@@ -15,14 +15,16 @@ var opts = nopt({
   exclude: Array,
   'base-url': path,
   baseUrl: path, // alias for --base-url
-  transitive: Boolean
+  transitive: Boolean,
+  'exclude-dev': Boolean
 }, {
   h: '--help',
   v: '--version',
   c: '--config',
   e: '--exclude',
   b: '--base-url',
-  t: '--transitive'
+  t: '--transitive',
+  d: '--exclude-dev'
 });
 
 if (opts['base-url']) {
@@ -38,12 +40,13 @@ function help() {
     'Usage: bower-requirejs [options]',
     '',
     'General options:',
-    '  -h, --help           # Print options and usage',
-    '  -v, --version        # Print the version number',
-    '  -c, --config         # Path to your RequireJS config file',
-    '  -e, --exclude        # Name of a dependency to be excluded from the process',
-    '  -b, --base-url        # Path which all dependencies will be relative to',
-    '  -t, --transitive     # Process transitive dependencies',
+    '  -h, --help              # Print options and usage',
+    '  -v, --version           # Print the version number',
+    '  -c, --config            # Path to your RequireJS config file',
+    '  -e, --exclude           # Name of a dependency to be excluded from the process',
+    '  -b, --base-url          # Path which all dependencies will be relative to',
+    '  -t, --transitive        # Process transitive dependencies',
+    '  -d, --exclude-dev       # Exclude devDependencies',
     ''
   ];
 

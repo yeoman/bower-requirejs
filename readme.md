@@ -20,12 +20,13 @@ $ npm install --save bower-requirejs
 ## Options
 
 ```
--h, --help           # Print options and usage'
--v, --version        # Print the version number'
--c, --config         # Path to your RequireJS config file'
--e, --exclude        # Name of a dependency to be excluded from the process'
--b, --base-url       # Path which all dependencies will be relative to'
--t, --transitive     # Process transitive dependencies'
+-h, --help              # Print options and usage'
+-v, --version           # Print the version number'
+-c, --config            # Path to your RequireJS config file'
+-e, --exclude           # Name of a dependency to be excluded from the process'
+-b, --base-url          # Path which all dependencies will be relative to'
+-t, --transitive        # Process transitive dependencies'
+-d, --exclude-dev       # Exclude devDependencies'
 ```
 
 
@@ -76,6 +77,10 @@ If the transitive option is set to ```true```, then transitive dependencies will
 For example, say we explicitly have an entry in our bower config for module ```myTotallyCoolModule```, which depends on ```jQuery``` and ```underscore```. If the transitive option is set to ```true```, there will be config entries for ```myTotallyCoolModule```, ```jQuery```, and ```underscore```. Otherwise, if the transitive option is set to ```false```, there will only be a config entry for ```myTotallyCoolModule```.
 
 Each transitive dependency is only included once, even if the dependency is used multiple times.
+
+### exclude-dev option
+
+If the `exclude-dev` option is set to ```true```, then dev-dependencies will not be added to the require config.
 
 
 ### RequireJS component

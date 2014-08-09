@@ -15,7 +15,8 @@ describe('bin', function () {
       this.origExit = process.exit;
 
       mockery.enable({
-        warnOnUnregistered: false
+        warnOnUnregistered: false,
+        useCleanCache: true
       });
 
       // Mock lib/index.js to verify the binary passes along the
@@ -39,12 +40,14 @@ describe('bin', function () {
         '-b', 'bar',
         '-e', 'baz',
         '-t',
+        '-d'
       ];
       require('../../bin/bower-requirejs');
       this.mockOpts.config.should.eql(path.join(process.cwd(), 'foo'));
       this.mockOpts.baseUrl.should.eql(path.join(process.cwd(), 'bar'));
       this.mockOpts.exclude.should.eql(['baz']);
       this.mockOpts.transitive.should.eql(true);
+      this.mockOpts['exclude-dev'].should.eql(true);
     });
 
     it('should alias base-url', function () {
@@ -74,6 +77,22 @@ describe('bin', function () {
       this.mockOpts.baseUrl.should.eql(path.join(process.cwd(), 'bar'));
       this.mockOpts.exclude.should.eql(['baz']);
     });
+
+    it('should pass dev-dependencies', function () {
+      process.argv = [
+        'node',
+        path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
+        '-c', 'foo',
+        '--exclude-dev',
+        '-e', 'baz'
+      ];
+      require('../../bin/bower-requirejs');
+      this.mockOpts.config.should.eql(path.join(process.cwd(), 'foo'));
+      this.mockOpts['exclude-dev'].should.eql(true);
+      this.mockOpts.exclude.should.eql(['baz']);
+    });
+
+
 
   });
 

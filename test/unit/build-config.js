@@ -117,4 +117,33 @@ describe('buildConfig', function () {
     actual.should.eql(expected);
   });
 
+
+  it('should create without dev-dependencies', function () {
+    var baseUrl = '/';
+    var dependencyGraph = generateDependencyGraph({
+      baseUrl: baseUrl,
+      dependencies: [
+        {name: 'a'},
+        {name: 'b', dependencies: [
+          {name: 'child-of-b'}
+        ]},
+        {name: 'c'}
+      ]
+    });
+
+    dependencyGraph.pkgMeta.devDependencies = {c: '*'};
+
+    var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl, transitive: true, 'exclude-dev': true});
+
+    var expected = {
+      paths: {
+        a: 'a/main',
+        b: 'b/main',
+        'child-of-b': 'child-of-b/main'
+      },
+      packages: []
+    };
+    actual.should.eql(expected);
+  });
+
 });

@@ -105,4 +105,16 @@ describe('index', function () {
       });
     });
   });
+
+  describe('without dev-dependencies', function () {
+    it('should return the expected result', function (done) {
+      var opts = { config: 'tmp/no-devdependencies-config.js', exclude: ['underscore'], 'exclude-dev': true };
+      require('../../lib')(opts, function () {
+        var actual = jsonify(fs.readFileSync('tmp/no-devdependencies-config.js', 'utf8'));
+        var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/no-devdependencies-config-expected.js', 'utf8'));
+        actual.should.eql(expected);
+        done();
+      });
+    });
+  });
 });
