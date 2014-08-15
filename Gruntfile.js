@@ -75,19 +75,17 @@ module.exports = function (grunt) {
 
   grunt.registerTask('bower-install', function () {
     var done = this.async();
-    var spawn = require('child_process').spawn;
-    var ls = spawn('bower', ['install']);
-
-    ls.stdout.on('data', function (data) {
-      grunt.log.write(data);
-    });
-
-    ls.stderr.on('data', function (data) {
-      grunt.log.write(data);
-    });
-
-    ls.on('close', function (code) {
-      grunt.log.writeln('child process exited with code ' + code);
+    grunt.util.spawn({
+      cmd: 'bower',
+      args: ['install'],
+      opts: {
+        stdio: 'inherit'
+      }
+    }, function (error, result) {
+      if (error) {
+        grunt.fail.fatal(result.stdout);
+      }
+      grunt.log.writeln(result.stdout);
       done();
     });
   });
