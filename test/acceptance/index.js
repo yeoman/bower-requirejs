@@ -117,4 +117,18 @@ describe('index', function () {
       });
     });
   });
+
+  describe('running multiple times', function () {
+    it('should return the expected result', function (done) {
+      var opts = { config: 'tmp/multiple-generated-config.js', exclude: ['underscore'] };
+      require('../../lib')(opts, function () {
+        require('../../lib')(opts, function () {
+          var actual = jsonify(fs.readFileSync('tmp/multiple-generated-config.js', 'utf8'));
+          var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/generated-config-expected.js', 'utf8'));
+          actual.should.eql(expected);
+          done();
+        });
+      });
+    });
+  });
 });
