@@ -70,21 +70,21 @@ module.exports = {
   'some-package': {
     canonicalDir: './tmp/bower_components/some-package',
     pkgMeta: {
-      moduleType: ['node'],
+      moduleType: ['node']
     }
   },
   'relative-location': {
     canonicalDir: './tmp/bower_components/relative-location',
     pkgMeta: {
       moduleType: ['node'],
-      location: 'location',
+      location: 'location'
     }
   },
   'absolute-location': {
     canonicalDir: './tmp/bower_components/absolute-location',
     pkgMeta: {
       moduleType: ['node'],
-      location: '/location',
+      location: '/location'
     }
   },
   'some-package-with-a-main': {

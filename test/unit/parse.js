@@ -4,6 +4,7 @@
 'use strict';
 var should = require('should');
 var parse = require('../../lib/parse');
+var path = require('path');
 var deps = require('./fixtures/deps');
 
 describe('parse', function () {
@@ -80,7 +81,7 @@ describe('parse', function () {
       package: {
         name: 'some-package',
         main: 'main.js',
-        location: deps[name].canonicalDir,
+        location: path.relative('./', deps[name].canonicalDir)
       }
     };
     actual.should.eql(expected);
@@ -122,7 +123,7 @@ describe('parse', function () {
       package: {
         name: 'some-package-with-a-main',
         main: 'some-main.js',
-        location: deps[name].canonicalDir
+        location: path.relative('./', deps[name].canonicalDir)
       }
     };
     actual.should.eql(expected);
