@@ -128,4 +128,14 @@ describe('parse', function () {
     };
     actual.should.eql(expected);
   });
+  
+  it('should parse as AMD when both AMD and node are supported', function () {
+	var name = 'supports-amd-and-node';
+	var actual = parse(deps[name], name, './');
+	var expected = {
+		type: 'paths',
+		paths: false
+	};
+	actual.should.eql(expected);
+  });
 });

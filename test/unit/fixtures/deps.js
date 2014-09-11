@@ -94,6 +94,12 @@ module.exports = {
       main: 'some-main.js'
     }
   },
+  'supports-amd-and-node': {
+	canonicalDir: './tmp/bower_components/supports-amd-and-node',
+	pkgMeta: {
+		moduleType: ['node', 'amd']
+	}
+  },
 
   // Dependencies that use extra search directories.
   'uses-dist': {
