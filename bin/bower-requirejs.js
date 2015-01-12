@@ -2,7 +2,6 @@
 'use strict';
 var nopt = require('nopt');
 var path = require('path');
-var chalk = require('chalk');
 var sudoBlock = require('sudo-block');
 var updateNotifier = require('update-notifier');
 var pkg = require('../package.json');
