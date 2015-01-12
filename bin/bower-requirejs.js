@@ -53,21 +53,6 @@ function help() {
   return out.join('\n');
 }
 
-function rootCheck() {
-  var msg = [
-    chalk.red('Easy with the `sudo` :)'),
-    'Since bower-requirejs is a user command, there is no need to execute it with superuser',
-    'permissions. If you\'re having permission errors when using bower-requirejs without sudo',
-    'please spend a few minutes learning more about how your system should work',
-    'and make any necessary repairs.',
-    '',
-    'http://www.joyent.com/blog/installing-node-and-npm',
-    'https://gist.github.com/isaacs/579814'
-  ];
-
-  sudoBlock({message: msg.join('\n')});
-}
-
 function pre() {
   if (opts.version) {
     return console.log(pkg.version);
@@ -87,5 +72,5 @@ if (opts['update-notifier'] !== false) {
   }).notify();
 }
 
-rootCheck();
+sudoBlock();
 pre();
