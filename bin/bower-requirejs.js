@@ -66,10 +66,7 @@ function pre() {
 }
 
 if (opts['update-notifier'] !== false) {
-  updateNotifier({
-    packageName: pkg.name,
-    packageVersion: pkg.version
-  }).notify();
+  updateNotifier({pkg: pkg}).notify();
 }
 
 sudoBlock();
