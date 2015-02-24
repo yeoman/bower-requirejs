@@ -43,9 +43,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "file-utils": "^0.2.1",
-    "lodash": "^2.4.1",
+    "lodash": "^3.3.0",
     "nopt": "^3.0.0",
     "object-assign": "^2.0.0",
     "requirejs": "^2.1.5",
@@ -59,14 +59,14 @@
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-simple-mocha": "^0.4.0",
-    "load-grunt-tasks": "^2.0.0",
+    "load-grunt-tasks": "^3.1.0",
     "mocha": "*",
     "mockery": "^1.4.0",
-    "should": "^4.0.4"
+    "should": "^5.0.1"
   },
   "peerDependencies": {
     "bower": "^1.x"
