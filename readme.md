@@ -85,8 +85,6 @@ If the `exclude-dev` option is set to ```true```, then dev-dependencies will not
 
 ### RequireJS component
 
-Although RequireJS does not provide a `bower.json` file, a path to `require.js` will still be created in your `rjsConfig` file. The path's name will be `requirejs`. If you are optimizing your scripts with `r.js` you can use this path to make sure RequireJS is included in your bundle.
-
 ## Package Support
 
 If a dependency's `moduleType` is set to `node` in `bower.json` it will be treated as a [CommonJS Package](http://requirejs.org/docs/api.html#packages).
