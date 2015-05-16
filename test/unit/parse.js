@@ -80,36 +80,7 @@ describe('parse', function () {
       type: 'package',
       package: {
         name: 'some-package',
-        main: 'main.js',
-        location: path.relative('./', deps[name].canonicalDir)
-      }
-    };
-    actual.should.eql(expected);
-  });
-
-  it('should parse relative package location ', function () {
-    var name = 'relative-location';
-    var actual = parse(deps[name], name, './');
-    var expected = {
-      type: 'package',
-      package: {
-        name: 'relative-location',
-        main: 'main.js',
-        location: 'tmp/bower_components/relative-location/location'
-      }
-    };
-    actual.should.eql(expected);
-  });
-
-  it('should parse absolute package location ', function () {
-    var name = 'absolute-location';
-    var actual = parse(deps[name], name, './');
-    var expected = {
-      type: 'package',
-      package: {
-        name: 'absolute-location',
-        main: 'main.js',
-        location: '/location'
+        main: 'main.js'
       }
     };
     actual.should.eql(expected);
@@ -122,13 +93,12 @@ describe('parse', function () {
       type: 'package',
       package: {
         name: 'some-package-with-a-main',
-        main: 'some-main.js',
-        location: path.relative('./', deps[name].canonicalDir)
+        main: 'some-main.js'
       }
     };
     actual.should.eql(expected);
   });
-  
+
   it('should parse as AMD when both AMD and node are supported', function () {
 	var name = 'supports-amd-and-node';
 	var actual = parse(deps[name], name, './');

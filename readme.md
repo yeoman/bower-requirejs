@@ -108,40 +108,7 @@ require.config({
   packages: [
     {
       name: 'node-module-type-stub',
-      main: 'myMain.js',
-      location: 'bower_components/node-module-type-stub'
-    }
-  ],
-  paths: {}
-});
-```
-
-### Configuring location
-
-By default, the task will set the package `location` to the root directory of the dependency. If the dependency includes a `location` property in its `bower.json`, then the location will be a combination of the root directory and the location dir.
-
-For example, a bower.json like this:
-
-``` js
-{
-  "name": "node-module-type-stub",
-  "version": "0.0.1",
-  "moduleType": ["node"],
-  "main": "myMain.js",
-  "location": "src"
-}
-```
-
-Will generate this entry in your `config.js` file:
-
-``` js
-require.config({
-  shim: {},
-  packages: [
-    {
-      name: 'node-module-type-stub',
-      main: 'myMain.js',
-      location: 'bower_components/node-module-type-stub/src'
+      main: 'myMain.js'
     }
   ],
   paths: {}
