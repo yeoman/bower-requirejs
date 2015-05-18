@@ -16,13 +16,17 @@ describe('buildConfig', function () {
    */
   var generateDependencyGraph = function (opts) {
     var baseUrl = opts.baseUrl || '/';
-
+    var overrides = opts.overrides;
     var dependencyGraph = {
       canonicalDir: '/test/canonical/dir',
       pkgMeta: {
         name: 'testName',
       },
     };
+
+    if (overrides) {
+      dependencyGraph.pkgMeta.overrides = overrides;
+    }
 
     var generatedDependencies = {};
 
@@ -44,11 +48,12 @@ describe('buildConfig', function () {
     var dependencies = opts.dependencies || [];
     var moduleType = opts.moduleType;
 
+
     var dep = {
       canonicalDir: path.join(baseUrl, opts.name),
       pkgMeta: {
         name: opts.name,
-        main: 'main.js',
+        main: opts.main || 'main.js',
       },
       dependencies: {}
     };
@@ -146,4 +151,34 @@ describe('buildConfig', function () {
     actual.should.eql(expected);
   });
 
+  it('should create with array as main and configured overrides', function() {
+    var baseUrl = '/';
+    var dependencyGraph = generateDependencyGraph({
+      baseUrl: baseUrl,
+      dependencies: [
+        {
+          name: 'a',
+          main: ['b.js', 'c.js']
+        }
+      ],
+      overrides: {
+        a: {
+          main: ['b.js', 'c.js', 'd.js']
+        }
+      }
+    });
+
+    var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl});
+    var expected = {
+      paths: {
+        b: 'a/b',
+        c: 'a/c',
+        d: 'a/d'
+      },
+      packages: []
+    };
+
+    actual.should.eql(expected);
+  })
+;
 });
