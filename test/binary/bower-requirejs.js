@@ -35,7 +35,7 @@ describe('bin', function () {
     it('should pass the correct opts', function () {
       process.argv = [
         'node',
-        path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
+        path.join(__dirname, '../../', pkg.bin),
         '-c', 'foo',
         '-b', 'bar',
         '-e', 'baz',
@@ -53,7 +53,7 @@ describe('bin', function () {
     it('should alias base-url', function () {
       process.argv = [
         'node',
-        path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
+        path.join(__dirname, '../../', pkg.bin),
         '-c', 'foo',
         '--baseUrl', 'bar',
         '-e', 'baz'
@@ -67,7 +67,7 @@ describe('bin', function () {
     it('should pass base-url', function () {
       process.argv = [
         'node',
-        path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
+        path.join(__dirname, '../../', pkg.bin),
         '-c', 'foo',
         '--base-url', 'bar',
         '-e', 'baz'
@@ -81,7 +81,7 @@ describe('bin', function () {
     it('should pass dev-dependencies', function () {
       process.argv = [
         'node',
-        path.join(__dirname, '../../', pkg.bin['bower-requirejs']),
+        path.join(__dirname, '../../', pkg.bin),
         '-c', 'foo',
         '--exclude-dev',
         '-e', 'baz'
@@ -97,7 +97,7 @@ describe('bin', function () {
   });
 
   it('should return the version', function (done) {
-    var cp = execFile('node', [path.join(__dirname, '../../', pkg.bin['bower-requirejs']), '--version', '--no-update-notifier']);
+    var cp = execFile('node', [path.join(__dirname, '../../', pkg.bin), '--version', '--no-update-notifier']);
     var expected = pkg.version;
 
     cp.stdout.on('data', function (data) {
