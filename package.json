@@ -18,26 +18,24 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "maintainers": [
     {
       "name": "Rob Dodson",
       "email": "lets.email.rob@gmail.com",
-      "url": "http://robdodson.me"
+      "url": "robdodson.me"
     }
   ],
   "contributors": [
     {
       "name": "Merrick Christensen",
       "email": "merrick.christensen@gmail.com",
-      "url": "http://merrickchristensen.com"
+      "url": "merrickchristensen.com"
     }
   ],
   "main": "lib",
-  "bin": {
-    "bower-requirejs": "bin/bower-requirejs.js"
-  },
+  "bin": "bin/bower-requirejs.js",
   "repository": "yeoman/bower-requirejs",
   "scripts": {
     "test": "grunt test"
