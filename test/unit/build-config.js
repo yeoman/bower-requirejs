@@ -4,7 +4,6 @@
 'use strict';
 var should = require('should');
 var path = require('path');
-var file = require('file-utils');
 var _ = require('lodash');
 var buildConfig = require('../../lib/build-config');
 
@@ -15,13 +14,12 @@ describe('buildConfig', function () {
    * Helper functions to create mock dependency graphs.
    */
   var generateDependencyGraph = function (opts) {
-    var baseUrl = opts.baseUrl || '/';
     var overrides = opts.overrides;
     var dependencyGraph = {
       canonicalDir: '/test/canonical/dir',
       pkgMeta: {
-        name: 'testName',
-      },
+        name: 'testName'
+      }
     };
 
     if (overrides) {
@@ -53,7 +51,7 @@ describe('buildConfig', function () {
       canonicalDir: path.join(baseUrl, opts.name),
       pkgMeta: {
         name: opts.name,
-        main: opts.main || 'main.js',
+        main: opts.main || 'main.js'
       },
       dependencies: {}
     };
@@ -80,8 +78,8 @@ describe('buildConfig', function () {
         {name: 'a'},
         {name: 'b', dependencies: [
           {name: 'child-of-b'}
-        ]},
-      ],
+        ]}
+      ]
     });
 
     var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl});
@@ -105,8 +103,8 @@ describe('buildConfig', function () {
         {name: 'a'},
         {name: 'b', dependencies: [
           {name: 'child-of-b'}
-        ]},
-      ],
+        ]}
+      ]
     });
 
     var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl, transitive: true});
@@ -151,7 +149,7 @@ describe('buildConfig', function () {
     actual.should.eql(expected);
   });
 
-  it('should create with array as main and configured overrides', function() {
+  it('should create with array as main and configured overrides', function () {
     var baseUrl = '/';
     var dependencyGraph = generateDependencyGraph({
       baseUrl: baseUrl,
@@ -179,6 +177,5 @@ describe('buildConfig', function () {
     };
 
     actual.should.eql(expected);
-  })
-;
+  });
 });

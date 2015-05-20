@@ -81,10 +81,10 @@ module.exports = {
     }
   },
   'supports-amd-and-node': {
-	canonicalDir: './tmp/bower_components/supports-amd-and-node',
-	pkgMeta: {
-		moduleType: ['node', 'amd']
-	}
+    canonicalDir: './tmp/bower_components/supports-amd-and-node',
+    pkgMeta: {
+      moduleType: ['node', 'amd']
+    }
   },
 
   // Dependencies that use extra search directories.
