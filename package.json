@@ -14,7 +14,7 @@
     "package",
     "module"
   ],
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
