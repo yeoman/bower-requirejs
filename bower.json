@@ -18,6 +18,7 @@
     "node-module-type-stub": "*"
   },
   "resolutions": {
+    "underscore": "~1.5.1",
     "jquery": "~1.10.0"
   },
   "overrides": {
