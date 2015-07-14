@@ -89,7 +89,8 @@ describe('buildConfig', function () {
         a: 'a/main',
         b: 'b/main'
       },
-      packages: []
+      packages: [],
+      shim: {}
     };
 
     actual.should.eql(expected);
@@ -115,11 +116,77 @@ describe('buildConfig', function () {
         b: 'b/main',
         'child-of-b': 'child-of-b/main'
       },
-      packages: []
+      packages: [],
+      shim: {}
     };
     actual.should.eql(expected);
   });
 
+  it('should create config w/ only top-level dependencies and shims', function () {
+    var baseUrl = '/';
+    var dependencyGraph = generateDependencyGraph({
+      baseUrl: baseUrl,
+      dependencies: [
+        {name: 'a'},
+        {name: 'b', dependencies: [
+          {name: 'child-of-b'}
+        ]}
+      ]
+    });
+
+    var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl, shim: true});
+
+    var expected = {
+      paths: {
+        a: 'a/main',
+        b: 'b/main'
+      },
+      packages: [],
+      shim: {
+        b: {
+          deps: ['child-of-b']
+        }
+      }
+    };
+
+    actual.should.eql(expected);
+  });
+
+  it('should create config with transitive dependencies and shims', function () {
+    var baseUrl = '/';
+    var dependencyGraph = generateDependencyGraph({
+      baseUrl: baseUrl,
+      dependencies: [
+        {name: 'a'},
+        {name: 'b', dependencies: [
+          {name: 'child-of-b', dependencies: [
+            {name: 'grandchild-of-b'}
+          ]}
+        ]}
+      ]
+    });
+
+    var actual = buildConfig(dependencyGraph, {baseUrl: baseUrl, transitive: true, shim: true});
+
+    var expected = {
+      paths: {
+        a: 'a/main',
+        b: 'b/main',
+        'child-of-b': 'child-of-b/main',
+        'grandchild-of-b': 'grandchild-of-b/main',
+      },
+      packages: [],
+      shim: {
+        b: {
+          deps: ['child-of-b']
+        },
+        'child-of-b': {
+          deps: ['grandchild-of-b']
+        }
+      }
+    };
+    actual.should.eql(expected);
+  });
 
   it('should create without dev-dependencies', function () {
     var baseUrl = '/';
@@ -144,7 +211,8 @@ describe('buildConfig', function () {
         b: 'b/main',
         'child-of-b': 'child-of-b/main'
       },
-      packages: []
+      packages: [],
+      shim: {}
     };
     actual.should.eql(expected);
   });
@@ -173,7 +241,8 @@ describe('buildConfig', function () {
         c: 'a/c',
         d: 'a/d'
       },
-      packages: []
+      packages: [],
+      shim: {}
     };
 
     actual.should.eql(expected);
