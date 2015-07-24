@@ -142,11 +142,7 @@ describe('buildConfig', function () {
         b: 'b/main'
       },
       packages: [],
-      shim: {
-        b: {
-          deps: ['child-of-b']
-        }
-      }
+      shim: {}
     };
 
     actual.should.eql(expected);

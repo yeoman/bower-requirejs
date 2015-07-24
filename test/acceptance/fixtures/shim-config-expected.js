@@ -6,8 +6,6 @@ var require = {
     'backbone.marionette': {
       deps: [
         'backbone',
-        'backbone.babysitter',
-        'backbone.wreqr',
         'jquery'
       ]
     },
