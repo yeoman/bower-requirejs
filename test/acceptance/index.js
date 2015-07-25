@@ -79,12 +79,34 @@ describe('index', function () {
     });
   });
 
+  describe('shims', function() {
+    it('should return the expected result', function (done) {
+      var opts = { shim: true, config: 'tmp/shim-config.js', exclude: ['underscore'] };
+      require('../../lib')(opts, function () {
+        var actual = jsonify(fs.readFileSync('tmp/shim-config.js', 'utf8'));
+        var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/shim-config-expected.js', 'utf8'));
+        actual.should.eql(expected);
+        done();
+      });
+    });
+  });
+
   describe('with transitive dependencies', function () {
     it('should return the expected result', function (done) {
       var opts = { transitive: true, config: 'tmp/transitive-config.js' };
       require('../../lib')(opts, function () {
         var actual = jsonify(fs.readFileSync('tmp/transitive-config.js', 'utf8'));
         var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/transitive-config-expected.js', 'utf8'));
+        actual.should.eql(expected);
+        done();
+      });
+    });
+
+    it('should shim transitive dependencies', function (done) {
+      var opts = { transitive: true, shim: true, config: 'tmp/shim-config.js' };
+      require('../../lib')(opts, function () {
+        var actual = jsonify(fs.readFileSync('tmp/shim-config.js', 'utf8'));
+        var expected = jsonify(fs.readFileSync('test/acceptance/fixtures/transitive-shim-config-expected.js', 'utf8'));
         actual.should.eql(expected);
         done();
       });

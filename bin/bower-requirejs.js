@@ -15,6 +15,7 @@ var opts = nopt({
   'base-url': path,
   baseUrl: path, // alias for --base-url
   transitive: Boolean,
+  shim: Boolean,
   'exclude-dev': Boolean
 }, {
   h: '--help',
@@ -23,6 +24,7 @@ var opts = nopt({
   e: '--exclude',
   b: '--base-url',
   t: '--transitive',
+  s: '--shim',
   d: '--exclude-dev'
 });
 
@@ -45,6 +47,7 @@ function help() {
     '  -e, --exclude           # Name of a dependency to be excluded from the process',
     '  -b, --base-url          # Path which all dependencies will be relative to',
     '  -t, --transitive        # Process transitive dependencies',
+    '  -s, --shim              # Shim dependencies',
     '  -d, --exclude-dev       # Exclude devDependencies',
     ''
   ];
