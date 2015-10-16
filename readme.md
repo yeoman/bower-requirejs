@@ -51,7 +51,7 @@ Bower >=v1.3.1 includes [hooks](https://github.com/bower/bower/blob/master/HOOKS
 If you do not already have a `config.js` file at the location specified by the `--config` option then one will be generated for you. A basic `config.js` file looks like this:
 
 ``` js
-requirejs.config({
+require.config({
   shim: {},
   paths: {}
 });
@@ -60,7 +60,7 @@ requirejs.config({
 You still need to create a path for *your* js files. This tool will only create paths for third party libraries specified in `bower.json`.
 
 ``` js
-requirejs.config({
+require.config({
   shim: {},
   paths: {
     myComponent: 'js/myComponent.js'  // make sure to add your components!
