@@ -20,14 +20,14 @@ $ npm install --save bower-requirejs
 ## Options
 
 ```
--h, --help              # Print options and usage'
--v, --version           # Print the version number'
--c, --config            # Path to your RequireJS config file'
--e, --exclude           # Name of a dependency to be excluded from the process'
--b, --base-url          # Path which all dependencies will be relative to'
--t, --transitive        # Process transitive dependencies'
--s, --shim              # Shim dependencies'
--d, --exclude-dev       # Exclude devDependencies'
+-h, --help              # Print options and usage
+-v, --version           # Print the version number
+-c, --config            # Path to your RequireJS config file
+-e, --exclude           # Name of a dependency to be excluded from the process
+-b, --base-url          # Path which all dependencies will be relative to
+-t, --transitive        # Process transitive dependencies
+-s, --shim              # Shim dependencies
+-d, --exclude-dev       # Exclude devDependencies
 ```
 
 
