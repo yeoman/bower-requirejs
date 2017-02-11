@@ -1,5 +1,7 @@
 # bower-requirejs [![Build Status](https://secure.travis-ci.org/yeoman/bower-requirejs.svg?branch=master)](http://travis-ci.org/yeoman/bower-requirejs)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yeoman/bower-requirejs.svg)](https://greenkeeper.io/)
+
 > Automagically wire-up installed Bower components into your RequireJS config
 
 
