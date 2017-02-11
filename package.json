@@ -43,28 +43,28 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "file-utils": "^0.2.1",
-    "lodash": "^3.3.0",
-    "nopt": "^3.0.0",
-    "object-assign": "^2.0.0",
+    "lodash": "^4.17.4",
+    "nopt": "^4.0.1",
+    "object-assign": "^4.1.1",
     "requirejs": "^2.1.5",
     "slash": "^1.0.0",
     "sudo-block": "^1.0.0",
-    "update-notifier": "^0.3.0"
+    "update-notifier": "^1.0.3"
   },
   "devDependencies": {
     "bower": "^1.x",
-    "durable-json-lint": "^0.0.1",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "^0.8.0",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
+    "durable-json-lint": "^0.0.2",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-simple-mocha": "^0.4.0",
     "load-grunt-tasks": "^3.1.0",
     "mocha": "*",
-    "mockery": "^1.4.0",
-    "should": "^5.0.1"
+    "mockery": "^2.0.0",
+    "should": "^11.2.0"
   },
   "peerDependencies": {
     "bower": "^1.x"
